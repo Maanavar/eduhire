@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EduHire - Apply for teaching jobs in India">
+  <meta name="keywords" content="teaching jobs, India educators, EduHire, teacher recruitment, education opportunities">
+  <meta property="og:title" content="EduHire - Teaching Job Details">
+  <meta property="og:description" content="Apply for teaching positions across India with EduHire">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.eduhire.in/job-detail">
+  <meta property="og:image" content="https://www.eduhire.in/assets/images/og-image.jpg">
+  <title>EduHire - Jobs</title>
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" as="style">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style">
+  <!-- Existing Links -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" onerror="this.onerror=null; this.href='styles/bootstrap.min.css';">
+  <link rel="stylesheet" href="styles/global/reset.css">
+  <link rel="stylesheet" href="styles/global/global.css">
+  <link rel="stylesheet" href="styles/global/components.css">
+  <link rel="stylesheet" href="styles/global/animations.css">
+  <link rel="stylesheet" href="styles/home.css"> <!-- Added for consistent animations -->
+  <link rel="stylesheet" href="styles/jobs.css">
+  <link rel="stylesheet" href="styles/global/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" onerror="this.onerror=null; this.href='styles/aos.css';">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" onerror="this.onerror=null; this.href='styles/font-awesome.min.css';">
+  <link rel="icon" href="assets/icons/favicon.ico">
+</head>
+<body>
+  <!-- Header (Dynamically Loaded) -->
+  <div id="header"></div>
+
+  <!-- Main Content -->
+  <main>
+    <section class="section jobs-section">
+      <div class="container">
+        <!-- Floating Elements -->
+        <div class="floating-element element-sphere"></div>
+        <div class="floating-element element-orbit"></div>
+        <canvas class="jobs-particles"></canvas>
+        
+        <nav aria-label="breadcrumb" class="breadcrumb-nav" data-aos="fade-up">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Jobs</li>
+          </ol>
+        </nav>
+        
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-subtitle">Explore Openings</span>
+          <h2 class="section-title">Teaching <span class="hero-title">Opportunities</span> in India</h2>
+          <p class="subtitle">Find your perfect teaching position with our smart matching system</p>
+        </div>
+        
+        <div class="row jobs-grid" id="job-listings" data-aos="fade-up" data-aos-delay="100">
+          <!-- Dynamic job listings from JS -->
+        </div>
+      </div>
+      <div class="jobs-overlay"></div>
+    </section>
+  </main>
+
+  <!-- Footer (Dynamically Loaded) -->
+  <div id="footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script type="module" src="scripts/global/init.js"></script>
+  <script type="module" src="scripts/jobs.js"></script>
+  <script>
+    // Initialize AOS with mobile-friendly settings
+    AOS.init({
+      duration: 600,
+      once: true,
+      disable: window.innerWidth < 768
+    });
+  </script>
+</body>
+</html>
