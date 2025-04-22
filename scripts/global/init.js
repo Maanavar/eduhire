@@ -3,12 +3,14 @@ import { initObserver } from './observer.js';
 import { initHome } from '../home.js';
 import { initJobs } from '../jobs.js';
 import { initJobDetail } from '../job-detail.js';
+import { initPostJob } from '../post-job.js';
 
 // Map page-specific initialization functions
 const pageInits = {
   'index.html': initHome,
   'jobs.html': initJobs,
-  'job-detail.html': initJobDetail
+  'job-detail.html': initJobDetail,
+  'post-job.html': initPostJob
 };
 
 // Main initialization function

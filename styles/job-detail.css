@@ -170,7 +170,7 @@
 }
 
 .form-input:invalid:focus {
-  border-color: var(--secondary);
+  border-color: var(--dark);
   box-shadow: 0 0 8px rgba(255, 111, 97, 0.5);
 }
 
@@ -192,11 +192,11 @@
 .form-input:not(:placeholder-shown) + .form-label {
   top: -0.5rem;
   font-size: clamp(0.75rem, 1.8vw, 0.875rem);
-  color: var(--primary);
+  color: var(--dark);
 }
 
 .form-input:focus:invalid + .form-label {
-  color: var(--secondary);
+  color: var(--dark);
 }
 
 .invalid-feedback {
