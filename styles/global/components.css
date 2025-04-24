@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--navbar-height, 70px);
+  height: var(--navbar-height, 90px);
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(107, 72, 255, 0.2);
@@ -31,7 +31,7 @@
 }
 
 .brand-e {
-  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  font-size: clamp(2.2rem, 3.8vw, 2.8rem);
   font-weight: 900;
   background: linear-gradient(135deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
@@ -40,7 +40,7 @@
 }
 
 .brand-du {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.6rem, 3.2vw, 2.2rem);
   font-weight: 600;
   color: var(--dark);
 }
@@ -71,8 +71,8 @@
 }
 
 .navbar-toggler-icon {
-  width: 30px;
-  height: 24px;
+  width: 34px;
+  height: 28px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -81,7 +81,7 @@
 
 .toggler-line {
   width: 100%;
-  height: 3px;
+  height: 3.5px;
   background: linear-gradient(90deg, var(--primary), var(--accent));
   border-radius: 3px;
   transition: all 0.4s ease;
@@ -101,8 +101,9 @@
 
 /* Navbar Nav */
 .navbar-nav {
-  gap: var(--spacing-md);
-  padding: var(--spacing-sm) 0;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) 0; /* Increased padding for vertical centering */
+  align-items: center;
 }
 
 .nav-item {
@@ -110,10 +111,10 @@
 }
 
 .nav-link {
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: clamp(0.95rem, 2.1vw, 1.15rem); /* Slightly larger */
   font-weight: 500;
   color: var(--text-light);
-  padding: var(--spacing-xs) var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md); /* Adjusted padding */
   transition: all 0.3s ease;
   position: relative;
 }
@@ -152,13 +153,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-xs) var(--spacing-md); /* Reduced padding for compactness */
-  font-size: clamp(0.85rem, 1.8vw, 0.95rem); /* Smaller font size */
-  font-weight: 500; /* Slightly lighter weight for elegance */
+  padding: var(--spacing-sm) var(--spacing-lg); /* Adjusted for new height */
+  font-size: clamp(0.9rem, 1.9vw, 1rem); /* Slightly larger */
+  font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
-  border-radius: 8px; /* Subtle rounding, less pill-like */
+  border-radius: 8px;
 }
 
 /* Hover and Focus Effects */
@@ -174,9 +175,14 @@
 
 /* Primary Action (Find Jobs) */
 .nav-action-primary {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-radius: 50px;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  border: none;
   color: var(--white);
-  padding: var(--spacing-sm) var(--spacing-lg); /* Slightly larger for prominence */
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: clamp(0.875rem, 2vw, 1rem);
 }
 
 .nav-action-primary:hover {
