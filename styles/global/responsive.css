@@ -705,65 +705,7 @@
   .footer-bottom a { font-size: clamp(0.875rem, 2vw, 1.25rem); }
 }
 
-/* Mobile-specific styles to ensure visibility of job cards and footer */
-@media (max-width: 767.98px) {
-  /* Job cards */
-  .jobs-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    min-height: 100px !important;
-  }
 
-  .job-card {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    transform: none !important;
-    min-height: 150px !important;
-    background-color: #fff !important;
-    border: 1px solid #ddd !important;
-    padding: 15px !important;
-    margin-bottom: 15px !important;
-  }
-
-  .job-card-header,
-  .job-card-body,
-  .job-card-footer {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  /* Footer */
-  #footer {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    min-height: 100px !important;
-    /* Keep primary background but ensure content is readable */
-    /* Optional: Uncomment to change background if primary color is unwanted */
-    /* background-color: #f8f9fa !important; */
-  }
-
-  #footer footer,
-  #footer .footer-content,
-  #footer p,
-  #footer a,
-  #footer span,
-  #footer div {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    color: #fff !important; /* White text for high contrast */
-    text-decoration: none !important; /* Optional: Remove underline for links */
-  }
-
-  #footer a:hover {
-    color: #f8f9fa !important; /* Slightly lighter on hover */
-    text-decoration: underline !important; /* Optional: Underline on hover */
-  }
 
   /* Prevent overlapping elements */
   .hero-particles,
@@ -782,28 +724,6 @@
   transition: none !important;
 }
 
-/* General visibility fixes */
-.jobs-grid,
-.job-card,
-#footer {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
 
-/* Ensure footer text is readable across all devices */
-#footer footer,
-#footer .footer-content,
-#footer p,
-#footer a,
-#footer span,
-#footer div {
-  color: #fff !important; /* White text for high contrast */
-  text-decoration: none !important;
-}
 
-#footer a:hover {
-  color: #f8f9fa !important;
-  text-decoration: underline !important;
-}
 
