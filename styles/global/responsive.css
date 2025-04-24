@@ -742,16 +742,27 @@
     visibility: visible !important;
     opacity: 1 !important;
     min-height: 100px !important;
-    background-color: transparent !important; /* Override primary color if unwanted */
+    /* Keep primary background but ensure content is readable */
+    /* Optional: Uncomment to change background if primary color is unwanted */
+    /* background-color: #f8f9fa !important; */
   }
 
   #footer footer,
   #footer .footer-content,
-  #footer a {
+  #footer p,
+  #footer a,
+  #footer span,
+  #footer div {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    color: #333 !important; /* Ensure text is visible */
+    color: #fff !important; /* White text for high contrast */
+    text-decoration: none !important; /* Optional: Remove underline for links */
+  }
+
+  #footer a:hover {
+    color: #f8f9fa !important; /* Slightly lighter on hover */
+    text-decoration: underline !important; /* Optional: Underline on hover */
   }
 
   /* Prevent overlapping elements */
@@ -778,5 +789,21 @@
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
+}
+
+/* Ensure footer text is readable across all devices */
+#footer footer,
+#footer .footer-content,
+#footer p,
+#footer a,
+#footer span,
+#footer div {
+  color: #fff !important; /* White text for high contrast */
+  text-decoration: none !important;
+}
+
+#footer a:hover {
+  color: #f8f9fa !important;
+  text-decoration: underline !important;
 }
 
