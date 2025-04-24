@@ -54,23 +54,59 @@ export async function loadComponent(placeholderId, filePath, props = {}) {
 }
 
 /**
- * Initializes active state for navigation links
+ * Initializes active state for navigation links and dynamic section links
  */
 export function initActiveNavLink() {
   const navLinks = document.querySelectorAll('.nav-link');
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const isIndexPage = currentPath === 'index.html' || currentPath === '';
+
+  // Adjust section links based on current page
+  navLinks.forEach(link => {
+    const section = link.getAttribute('data-section');
+    if (section) {
+      // If not on index.html, point to index.html#section
+      if (!isIndexPage) {
+        link.setAttribute('href', `index.html#${section}`);
+      } else {
+        link.setAttribute('href', `#${section}`);
+      }
+    }
+  });
+
   
-  // Set active state based on current page
+  // Set active state based on current page or section
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPath || 
-        (currentPath === 'index.html' && href === '#home')) {
+    if (isIndexPage && href.startsWith('#') && window.location.hash === href) {
+      link.classList.add('active');
+    } else if (href === currentPath) {
       link.classList.add('active');
     }
   });
-  
-  // Handle section scrolling for hash links
-  if (window.location.hash) {
+
+  // Handle smooth scrolling for section links
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href.startsWith('#') && isIndexPage) {
+        e.preventDefault();
+        const sectionId = href.substring(1);
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+          // Update active state
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+          // Update URL hash without jumping
+          history.pushState(null, null, href);
+        }
+      }
+    });
+  });
+
+  // Handle initial hash on page load
+  if (isIndexPage && window.location.hash) {
     const targetSection = document.querySelector(window.location.hash);
     if (targetSection) {
       setTimeout(() => {
@@ -78,27 +114,27 @@ export function initActiveNavLink() {
       }, 100);
     }
   }
-  
-  // Update active state on scroll
-  window.addEventListener('scroll', debounce(() => {
-    const scrollPosition = window.scrollY + 100;
-    
-    document.querySelectorAll('section[id]').forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute('id');
-      
-      if (scrollPosition >= sectionTop && 
-          scrollPosition < sectionTop + sectionHeight) {
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${sectionId}`) {
-            link.classList.add('active');
-          }
-        });
-      }
-    });
-  }, 100));
+
+  // Update active state on scroll (for index.html only)
+  if (isIndexPage) {
+    window.addEventListener('scroll', debounce(() => {
+      const scrollPosition = window.scrollY + 100;
+      document.querySelectorAll('section[id]').forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${sectionId}`) {
+              link.classList.add('active');
+              history.pushState(null, null, `#${sectionId}`);
+            }
+          });
+        }
+      });
+    }, 100));
+  }
 }
 
 /**

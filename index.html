@@ -36,6 +36,8 @@
     <!-- Hero Section with Integrated Stats - 2025 Professional Design -->
     <section id="hero" class="hero-section">
       <div class="hero-container">
+        <div class="floating-element element-sphere"></div>
+        <canvas class="hero-particles"></canvas>
         <div class="hero-content" data-aos="fade-up" data-aos-duration="800">
           <h1>Launch Your <span class="hero-title">Teaching Future</span></h1>
           <p class="subtitle">Connect with 10,000+ opportunities across India’s largest educator network</p>
@@ -47,52 +49,46 @@
           </div>
         </div>
         <div class="hero-visuals" data-aos="fade-left" data-aos-duration="1000">
-          <div class="hero-hologram"></div>
-          <div class="floating-element element-sphere"></div>
-          <div class="floating-element element-orbit"></div>
-          <div class="floating-element element-pulse"></div>
-          <canvas class="hero-particles"></canvas>
          <!-- Inside your hero-visuals div, replace the stats-cluster div with this: -->
-        <div class="stats-cluster">
-          <div class="stat-orb" data-aos="zoom-in" data-aos-delay="100">
-            <div class="stat-orb-inner">
-              <div class="stat-value" data-target="4200">0</div>
-              <div class="stat-label">Users</div>
+          <div class="stats-cluster">
+            <div class="stat-orb" data-aos="zoom-in" data-aos-delay="100">
+              <div class="stat-orb-inner">
+                <div class="stat-value" data-target="4200">0</div>
+                <div class="stat-label">Users</div>
+              </div>
+              <div class="stat-orb-glow"></div>
+              <div class="stat-orb-ring"></div>
             </div>
-            <div class="stat-orb-glow"></div>
-            <div class="stat-orb-ring"></div>
+            
+            <div class="stat-orb" data-aos="zoom-in" data-aos-delay="200">
+              <div class="stat-orb-inner">
+                <div class="stat-value" data-target="1250">0</div>
+                <div class="stat-label">Teachers Placed</div>
+              </div>
+              <div class="stat-orb-glow"></div>
+              <div class="stat-orb-ring"></div>
+            </div>
+            
+            <div class="stat-orb" data-aos="zoom-in" data-aos-delay="300">
+              <div class="stat-orb-inner">
+                <div class="stat-value" data-target="320">0</div>
+                <div class="stat-label">Schools</div>
+              </div>
+              <div class="stat-orb-glow"></div>
+              <div class="stat-orb-ring"></div>
+            </div>
+            
+            <div class="stat-orb" data-aos="zoom-in" data-aos-delay="400">
+              <div class="stat-orb-inner">
+                <div class="stat-value" data-target="8">0</div>
+                <div class="stat-label">States Operating</div>
+              </div>
+              <div class="stat-orb-glow"></div>
+              <div class="stat-orb-ring"></div>
+            </div>
           </div>
-          
-          <div class="stat-orb" data-aos="zoom-in" data-aos-delay="200">
-            <div class="stat-orb-inner">
-              <div class="stat-value" data-target="1250">0</div>
-              <div class="stat-label">Teachers Placed</div>
-            </div>
-            <div class="stat-orb-glow"></div>
-            <div class="stat-orb-ring"></div>
-          </div>
-          
-          <div class="stat-orb" data-aos="zoom-in" data-aos-delay="300">
-            <div class="stat-orb-inner">
-              <div class="stat-value" data-target="320">0</div>
-              <div class="stat-label">Schools</div>
-            </div>
-            <div class="stat-orb-glow"></div>
-            <div class="stat-orb-ring"></div>
-          </div>
-          
-          <div class="stat-orb" data-aos="zoom-in" data-aos-delay="400">
-            <div class="stat-orb-inner">
-              <div class="stat-value" data-target="8">0</div>
-              <div class="stat-label">States Operating</div>
-            </div>
-            <div class="stat-orb-glow"></div>
-            <div class="stat-orb-ring"></div>
           </div>
         </div>
-        </div>
-      </div>
-      <div class="hero-overlay"></div>
     </section>
 
     <!-- About Us Section - 2025 Futuristic Design -->
@@ -226,74 +222,6 @@
             <div class="step-hologram"></div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Explore Opportunities -->
-    <section id="explore-opportunities" class="section explore-opportunities">
-      <div class="container">
-        <div class="section-header explore-header" data-aos="fade-up">
-          <span class="section-subtitle">Explore Opportunities</span>
-          <h2 class="section-title">Teaching Positions Across India</h2>
-        </div>
-        <div class="explore-carousel-container">
-          <div class="explore-carousel" data-aos="fade-up" data-aos-delay="100">
-            <div class="explore-card">
-              <img src="assets/images/chennai.jpg" alt="Chennai teaching jobs" loading="lazy">
-              <div class="explore-card-content">
-                <h3>Chennai</h3>
-                <a href="/jobs/chennai" class="btn btn-lg common-btn">Explore CHE <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-            <div class="explore-card">
-              <img src="assets/images/coimbatore.jpg" alt="Coimbatore teaching jobs" loading="lazy">
-              <div class="explore-card-content">
-                <h3>Coimbatore</h3>
-                <a href="/jobs/coimbatore" class="btn btn-lg common-btn">Explore CBE <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-            <div class="explore-card">
-              <img src="assets/images/tiruppur.jpg" alt="Tiruppur teaching jobs" loading="lazy">
-              <div class="explore-card-content">
-                <h3>Tiruppur</h3>
-                <a href="/jobs/tiruppur" class="btn btn-lg common-btn">Explore TUP <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-            <div class="explore-card">
-              <img src="assets/images/erode.jpg" alt="Erode teaching jobs" loading="lazy">
-              <div class="explore-card-content">
-                <h3>Erode</h3>
-                <a href="/jobs/erode" class="btn btn-lg common-btn">Explore ED <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-            <div class="explore-card">
-              <img src="assets/images/madurai.jpg" alt="Madurai teaching jobs" loading="lazy">
-              <div class="explore-card-content">
-                <h3>Madurai</h3>
-                <a href="/jobs/madurai" class="btn btn-lg common-btn">Explore MD <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-            <div class="explore-card">
-              <img src="assets/images/madurai.jpg" alt="Bangalore teaching jobs" loading="lazy">
-              <div class="explore-card-content">
-                <h3>Bangalore</h3>
-                <a href="/jobs/bangalore" class="btn btn-lg common-btn">Explore BG <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-controls">
-            <button class="carousel-arrow prev" aria-label="Previous slide">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <div class="carousel-dots">
-              <!-- Dots will be dynamically added by JS -->
-            </div>
-            <button class="carousel-arrow next" aria-label="Next slide">
-              <i class="fas fa-chevron-right"></i>
-            </button>
-          </div>
-        </div>
-        
       </div>
     </section>
 

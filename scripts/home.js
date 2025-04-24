@@ -2,35 +2,35 @@ import { jobs } from './global/data.js';
 
 export function initHome() {
   // Initialize jobs grid
-// Initialize Featured Jobs Grid
-const jobsSection = document.getElementById('featured-jobs');
-if (jobsSection) {
-  const jobsGrid = document.getElementById('jobGrid');
-  const featuredJobs = jobs.slice(0, 3); // Limit to 3 jobs
+  // Initialize Featured Jobs Grid
+  const jobsSection = document.getElementById('featured-jobs');
+  if (jobsSection) {
+    const jobsGrid = document.getElementById('jobGrid');
+    const featuredJobs = jobs.slice(0, 3); // Limit to 3 jobs
 
-  if (featuredJobs.length > 0) {
-    jobsGrid.innerHTML = featuredJobs.map((job, index) => `
-      <div class="job-card" data-aos="fade-up" data-aos-delay="${index * 100}">
-        <div class="job-card-header">
-          <h3 class="job-card-title">${job.title}</h3>
-          <div class="job-card-meta">
-            <span><i class="fas fa-building"></i> ${job.institution}</span>
-            <span><i class="fas fa-map-marker-alt"></i> ${job.location}</span>
+    if (featuredJobs.length > 0) {
+      jobsGrid.innerHTML = featuredJobs.map((job, index) => `
+        <div class="job-card" data-aos="fade-up" data-aos-delay="${index * 100}">
+          <div class="job-card-header">
+            <h3 class="job-card-title">${job.title}</h3>
+            <div class="job-card-meta">
+              <span><i class="fas fa-building"></i> ${job.institution}</span>
+              <span><i class="fas fa-map-marker-alt"></i> ${job.location}</span>
+            </div>
+          </div>
+          <div class="job-card-body">
+            <p>${job.description.substring(0, 120)}...</p>
+          </div>
+          <div class="job-card-footer">
+            <span class="salary">₹${job.salary}/month</span>
+            <a href="job-detail.html?id=${job.id}" class="btn btn-primary">Apply Now</a>
           </div>
         </div>
-        <div class="job-card-body">
-          <p>${job.description.substring(0, 120)}...</p>
-        </div>
-        <div class="job-card-footer">
-          <span class="salary">₹${job.salary}/month</span>
-          <a href="job-detail.html?id=${job.id}" class="btn btn-primary">Apply Now</a>
-        </div>
-      </div>
-    `).join('');
-  } else {
-    jobsGrid.innerHTML = '<p class="no-jobs">No featured jobs available.</p>';
+      `).join('');
+    } else {
+      jobsGrid.innerHTML = '<p class="no-jobs">No featured jobs available.</p>';
+    }
   }
-}
 
   // Initialize FAQ accordion
   const faqQuestions = document.querySelectorAll('.faq-question');
@@ -270,60 +270,60 @@ if (jobsSection) {
     initCarousel();
   }
 
-// Stats counter animation
-function animateCounter(element, target) {
-  let start = 0;
-  const duration = 2000; // 2 seconds
-  const increment = target / (duration / 16); // 60 FPS approximation
-  const startTime = Date.now();
+  // Stats counter animation
+  function animateCounter(element, target) {
+    let start = 0;
+    const duration = 2000; // 2 seconds
+    const increment = target / (duration / 16); // 60 FPS approximation
+    const startTime = Date.now();
 
-  function update() {
-    const elapsed = Date.now() - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    const value = Math.floor(progress * target);
-    
-    element.textContent = value.toLocaleString('en-IN');
-    
-    if (progress < 1) {
-      requestAnimationFrame(update);
-    } else {
-      element.textContent = target.toLocaleString('en-IN');
-    }
-  }
-  
-  requestAnimationFrame(update);
-}
-
-const statsCluster = document.querySelector('.stats-cluster');
-if (statsCluster) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const statValues = statsCluster.querySelectorAll('.stat-value');
-        statValues.forEach(value => {
-          const target = parseInt(value.getAttribute('data-target'), 10);
-          animateCounter(value, target);
-        });
-
-        // Entrance animation for stat orbs
-        const statOrbs = statsCluster.querySelectorAll('.stat-orb');
-        statOrbs.forEach((orb, index) => {
-          orb.style.opacity = '0';
-          orb.style.transform = 'translateY(20px)';
-          setTimeout(() => {
-            orb.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            orb.style.opacity = '1';
-            orb.style.transform = 'translateY(0)';
-          }, index * 200); // Staggered entrance
-        });
-
-        observer.unobserve(entry.target); // Stop observing after animation
+    function update() {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const value = Math.floor(progress * target);
+      
+      element.textContent = value.toLocaleString('en-IN');
+      
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        element.textContent = target.toLocaleString('en-IN');
       }
-    });
-  }, { threshold: 0.5 });
+    }
+    
+    requestAnimationFrame(update);
+  }
 
-  observer.observe(statsCluster);
-}
+  const statsCluster = document.querySelector('.stats-cluster');
+  if (statsCluster) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const statValues = statsCluster.querySelectorAll('.stat-value');
+          statValues.forEach(value => {
+            const target = parseInt(value.getAttribute('data-target'), 10);
+            animateCounter(value, target);
+          });
+
+          // Entrance animation for stat orbs
+          const statOrbs = statsCluster.querySelectorAll('.stat-orb');
+          statOrbs.forEach((orb, index) => {
+            orb.style.opacity = '0';
+            orb.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+              orb.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+              orb.style.opacity = '1';
+              orb.style.transform = 'translateY(0)';
+            }, index * 200); // Staggered entrance
+          });
+
+          observer.unobserve(entry.target); // Stop observing after animation
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(statsCluster);
+  }
 
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -334,6 +334,45 @@ if (statsCluster) {
       });
     });
   });
+
+  // Particle effect for nav-cta
+  const ctaButton = document.querySelector('.nav-cta');
+  if (ctaButton) {
+    ctaButton.addEventListener('click', function(e) {
+      const rect = this.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      for (let i = 0; i < 10; i++) {
+        const particle = document.createElement('span');
+        particle.classList.add('particle');
+        particle.style.left = `${x}px`;
+        particle.style.top = `${y}px`;
+        particle.style.background = `hsl(${Math.random() * 60 + 240}, 70%, 50%)`;
+        this.appendChild(particle);
+
+        const angle = Math.random() * Math.PI * 2;
+        const velocity = Math.random() * 100 + 50;
+        let vx = Math.cos(angle) * velocity;
+        let vy = Math.sin(angle) * velocity;
+
+        let t = 0;
+        const animate = () => {
+          t += 16 / 1000;
+          vx *= 0.95;
+          vy += 200 * (16 / 1000);
+          particle.style.transform = `translate(${vx * t}px, ${vy * t}px)`;
+          particle.style.opacity = 1 - t;
+          if (t < 1) {
+            requestAnimationFrame(animate);
+          } else {
+            particle.remove();
+          }
+        };
+        requestAnimationFrame(animate);
+      }
+    });
+  }
 
   // Initialize Hero Particles
   initHeroParticles();

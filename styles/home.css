@@ -5,26 +5,27 @@
 
 /* Hero Section - 2025 Futuristic Design */
 .hero-section {
-  min-height: calc(100vh - var(--navbar-height, 60px)); /* Adjust height to account for navbar */
+  height: auto;
+  min-height: calc(80vh - var(--navbar-height, 70px));
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: var(--spacing-xxl) 0;
-  padding-top: calc(var(--navbar-height, 60px) + var(--spacing-xxl)); /* Push content below navbar */
+  padding: var(--spacing-xl) 0;
+  padding-top: calc(var(--navbar-height, 70px) + var(--spacing-xl) + 20px); /* Added extra 20px for buffer */
   background-color: var(--white);
-  
 }
 
 .hero-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-lg);
   max-width: 1600px;
   margin: 0 auto;
-  padding: var(--spacing-xxl);
+  padding: var(--spacing-xl);
   position: relative;
   z-index: 2;
+  align-items: start;
 }
 
 .hero-content {
@@ -118,7 +119,6 @@
 
 .hero-visuals {
   position: relative;
-  min-height: 500px;
   perspective: 1000px;
 }
 
@@ -137,27 +137,17 @@
 }
 
 .element-sphere {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   top: 10%;
   right: 15%;
   background: radial-gradient(circle, rgba(107, 72, 255, 0.2), transparent);
   animation: floatSphere 6s infinite ease-in-out;
 }
 
-.element-orbit {
-  width: 300px;
-  height: 300px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 2px dashed rgba(0, 221, 235, 0.3);
-  animation: orbitRotate 12s infinite linear;
-}
-
 .element-pulse {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   bottom: 20%;
   left: 10%;
   background: rgba(167, 139, 250, 0.15);
@@ -194,8 +184,8 @@
 .stat-orb {
   position: relative;
   perspective: 1000px;
-  height: 100px; /* Reduced base size */
-  width: 100px; /* Reduced base size */
+  height: 100px;
+  width: 100px;
   margin: 0;
 }
 
@@ -262,7 +252,7 @@
 }
 
 .stat-value {
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem); /* Slightly reduced */
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   font-weight: 800;
   background: linear-gradient(135deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
@@ -276,7 +266,7 @@
 }
 
 .stat-label {
-  font-size: clamp(0.6rem, 1.2vw, 0.8rem); /* Slightly reduced */
+  font-size: clamp(0.6rem, 1.2vw, 0.8rem);
   font-weight: 600;
   color: var(--text);
   text-transform: uppercase;
@@ -293,14 +283,49 @@
 /* Animation for hologram effect */
 @keyframes hologramShift {
   0% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+  50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
 }
 
-/* New Animation */
+/* Keyframes for Animations */
+@keyframes textGlow {
+  0% { text-shadow: 0 0 5px rgba(107, 72, 255, 0.3); }
+  50% { text-shadow: 0 0 15px rgba(107, 72, 255, 0.5), 0 0 20px rgba(0, 221, 235, 0.3); }
+  100% { text-shadow: 0 0 5px rgba(107, 72, 255, 0.3); }
+}
+
+@keyframes scanPulse {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes floatSphere {
+  0% { transform: translateY(0) rotateX(0deg); }
+  50% { transform: translateY(-20px) rotateX(10deg); }
+  100% { transform: translateY(0) rotateX(0deg); }
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 0.5; }
+}
+
 @keyframes orbPulse {
   0%, 100% { transform: scale(1); opacity: 0.8; }
   50% { transform: scale(1.1); opacity: 1; }
+}
+
+@keyframes floatDot {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes ringSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* About Us Section - 2025 Futuristic Design */
@@ -664,193 +689,6 @@ text-align: center;
   line-height: 1.6;
 }
 
-/* Explore Opportunities */
-.explore-opportunities .container {
-  position: relative;
-  overflow: hidden;
-}
-
-.explore-header {
-  text-align: center;
-}
-
-.explore-carousel-container {
-  position: relative;
-  overflow: hidden; /* Hide the native scroll */
-  width: 100%;
-}
-
-.explore-carousel {
-  display: flex;
-  gap: var(--spacing-md);
-  width: 100%;
-  transition: transform 0.5s ease;
-  will-change: transform;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 10px; /* Space for scrollbar */
-}
-
-/* Hide scrollbar but keep functionality */
-.explore-carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.explore-card {
-  position: relative;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: transform var(--transition);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
-  flex: 0 0 auto;
-  width: 280px; /* Base width */
-  height: 300px;
-  scroll-snap-align: start;
-}
-
-.explore-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
-}
-
-.explore-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.explore-card-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  width: 100%;
-  padding: var(--spacing-md);
-  transition: all 0.4s ease;
-}
-
-.explore-card-content h3 {
-  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-  font-weight: 700;
-  margin-bottom: var(--spacing-md);
-  color: white;
-  text-transform: uppercase;
-}
-
-.explore-card-content .btn {
-  background-color: white;
-  color: var(--primary);
-  font-size: clamp(0.875rem, 2vw, 1rem);
-  padding: 8px 16px;
-  border-radius: 25px;
-  font-weight: 600;
-  text-transform: none;
-  letter-spacing: normal;
-  border-color: var(--primary);
-}
-
-.explore-card-content .btn:hover {
-  background-color: var(--primary);
-  color: white;
-}
-
-.carousel-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: var(--spacing-md);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.carousel-arrow {
-  background: var(--primary);
-  color: white;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.carousel-arrow:hover {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  transform: scale(1.1);
-}
-
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.carousel-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(67, 97, 238, 0.3);
-  border: none;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.carousel-dot.active {
-  background: var(--primary);
-  transform: scale(1.2);
-}
-
-/* Responsive adjustments */
-@media (min-width: 576px) {
-  .explore-card {
-    width: calc(50% - var(--spacing-md));
-  }
-}
-
-@media (min-width: 768px) {
-  .explore-card {
-    width: calc(33.333% - var(--spacing-md));
-  }
-}
-
-@media (min-width: 992px) {
-  .explore-card {
-    width: calc(25% - var(--spacing-md));
-  }
-}
-
-@media (min-width: 1200px) {
-  .explore-card {
-    width: calc(20% - var(--spacing-md)); /* 5 cards */
-  }
-}
-
-/* Hide controls when not needed */
-.carousel-controls[aria-hidden="true"] {
-  display: none !important;
-}
-
-/* For touch devices - enable native scroll only when JS fails */
-@media (hover: none) and (pointer: coarse) {
-  .explore-carousel-container {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-  }
-  .explore-carousel {
-    pointer-events: none; /* Let container handle scrolling */
-  }
-  .explore-card {
-    scroll-snap-align: start;
-  }
-}
 
 /* Institutions */
 .institutions {
@@ -1086,14 +924,18 @@ text-align: center;
 /* FAQ */
 .faq {
   padding: var(--spacing-xxl) 0;
+
 }
 
 .faq-item {
+  width: 80%; /* Set section to 80% of viewport width */
+  margin: 0 auto; /* Center the section */
   margin-bottom: var(--spacing-md);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
+
 }
 
 .faq-item:hover {
