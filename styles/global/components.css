@@ -111,7 +111,7 @@
 }
 
 .nav-link {
-  font-size: clamp(0.95rem, 2.1vw, 1.15rem); /* Slightly larger */
+  font-size: clamp(0.95rem, 2.1vw, 1rem); /* Slightly larger */
   font-weight: 500;
   color: var(--text-light);
   padding: var(--spacing-sm) var(--spacing-md); /* Adjusted padding */
@@ -153,19 +153,17 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-sm) var(--spacing-lg); /* Adjusted for new height */
-  font-size: clamp(0.9rem, 1.9vw, 1rem); /* Slightly larger */
+  padding: var(--spacing-xs) var(--spacing-md); 
+  font-size: clamp(0.9rem, 1.9vw, 1rem); 
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
-  border-radius: 8px;
 }
 
 /* Hover and Focus Effects */
 .nav-action:hover {
-  transform: translateY(-1px); /* Subtle lift, less aggressive than scale */
-  box-shadow: 0 2px 10px rgba(107, 72, 255, 0.2); /* Lighter shadow */
+  transform: translateY(-1px);
 }
 
 .nav-action:focus {
@@ -175,32 +173,24 @@
 
 /* Primary Action (Find Jobs) */
 .nav-action-primary {
-  border-radius: 50px;
-  padding: 0.75rem 1.5rem;
+  border-radius: 40px;
+  padding: 0.75rem 1rem;
   background: var(--primary);
   border: none;
   color: var(--white);
   font-weight: 600;
   transition: all 0.3s ease;
-  font-size: clamp(0.875rem, 2vw, 1rem);
+  font-size: clamp(0.575rem, 2vw, 0.9rem);
 }
 
-.nav-action-primary:hover {
-  background: linear-gradient(135deg, var(--accent), var(--primary)); /* Gradient flip */
-  box-shadow: 0 4px 15px rgba(107, 72, 255, 0.4);
-}
 
 /* Secondary Action (Post Job) */
 .nav-action-secondary {
   background: transparent;
-  color: var(--primary);
   position: relative;
 }
 
-.nav-action-secondary:hover {
-  background: rgba(107, 72, 255, 0.05); /* Very subtle background */
-  color: var(--accent);
-}
+
 
 /* Underline Effect for Secondary Action */
 .nav-action-secondary::after {

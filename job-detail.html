@@ -68,128 +68,21 @@
               <!-- Job details will be loaded here -->
             </div>
             <div class="col-12 col-md-8 job-application-card" data-aos="fade-left">
-              <form id="job-application" class="application-form needs-validation" novalidate action="https://formsubmit.co/azaxissoftware@gmail.com" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="_mailto" value="azaxissoftware@gmail.com">
-                <input type="hidden" name="_subject" value="New Job Application from EduHire">
-                <input type="hidden" name="_captcha" value="true">
-                <input type="hidden" name="_next" value="https://www.theeduhire.com/thank-you.html">
-                <input type="text" name="_honeypot" style="display:none">
-                <!-- Hidden inputs for job-details -->
-                <input type="hidden" name="jobTitle" id="jobTitleHidden">
-                <input type="hidden" name="company" id="companyHidden">
-                <input type="hidden" name="location" id="locationHidden">
-                <input type="hidden" name="salary" id="salaryHidden">
-                <input type="hidden" name="jobType" id="jobTypeHidden">
-                <input type="hidden" name="description" id="descriptionHidden">
-                <h3 class="form-title">Launch Your <span class="hero-title">Application</span></h3>
-                <p class="subtitle">Fill the fields to apply for this position</p>
-                
-                <div class="form-grid">
-                  <div class="form-field">
-                    <input type="text" id="firstName" name="firstName" class="form-input" placeholder=" " required pattern="[A-Za-z]{2,}" aria-describedby="firstNameFeedback">
-                    <label for="firstName" class="form-label">First Name</label>
-                    <span id="firstNameFeedback" class="invalid-feedback">Min 2 letters</span>
-                  </div>
-                  <div class="form-field">
-                    <input type="text" id="lastName" name="lastName" class="form-input" placeholder=" " required pattern="[A-Za-z]{2,}" aria-describedby="lastNameFeedback">
-                    <label for="lastName" class="form-label">Last Name</label>
-                    <span id="lastNameFeedback" class="invalid-feedback">Min 2 letters</span>
-                  </div>
-                  <div class="form-field">
-                    <input type="email" id="email" name="email" class="form-input" placeholder=" " required aria-describedby="emailFeedback">
-                    <label for="email" class="form-label">Email</label>
-                    <span id="emailFeedback" class="invalid-feedback">Valid email required</span>
-                  </div>
-                  <div class="form-field">
-                    <input type="tel" id="contactNumber" name="contactNumber" class="form-input" placeholder=" " required pattern="[0-9]{10}" aria-describedby="contactNumberFeedback">
-                    <label for="contactNumber" class="form-label">Contact Number</label>
-                    <span id="contactNumberFeedback" class="invalid-feedback">10-digit number</span>
-                  </div>
-                  <div class="form-field">
-                    <input type="text" id="address1" name="address1" class="form-input" placeholder=" " required aria-describedby="address1Feedback">
-                    <label for="address1" class="form-label">Address Line 1</label>
-                    <span id="address1Feedback" class="invalid-feedback">Required</span>
-                  </div>
-                  <div class="form-field">
-                    <input type="text" id="address2" name="address2" class="form-input" placeholder=" ">
-                    <label for="address2" class="form-label">Address Line 2 (Optional)</label>
-                  </div>
-                  <div class="form-field">
-                    <input type="text" id="city" name="city" class="form-input" placeholder=" " required pattern="[A-Za-z\s]{2,}" aria-describedby="cityFeedback">
-                    <label for="city" class="form-label">City</label>
-                    <span id="cityFeedback" class="invalid-feedback">Valid city name</span>
-                  </div>
-                  <div class="form-field">
-                    <select id="state" name="state" class="form-input" required aria-describedby="stateFeedback">
-                      <option value="" disabled selected></option>
-                    </select>
-                    <label for="state" class="form-label">State</label>
-                    <span id="stateFeedback" class="invalid-feedback">Select a state</span>
-                  </div>
-                  <div class="form-field">
-                    <select id="district" name="district" class="form-input" required aria-describedby="districtFeedback">
-                      <option value="" disabled selected></option>
-                    </select>
-                    <label for="district" class="form-label">District</label>
-                    <span id="districtFeedback" class="invalid-feedback">Select a district</span>
-                  </div>
-                  <div class="form-field">
-                    <input type="text" id="pincode" name="pincode" class="form-input" placeholder=" " required pattern="[0-9]{6}" aria-describedby="pincodeFeedback">
-                    <label for="pincode" class="form-label">Pincode</label>
-                    <span id="pincodeFeedback" class="invalid-feedback">6-digit pincode</span>
-                  </div>
-                  <div class="form-field file-field">
-                    <input type="file" id="resume" name="resume" class="form-input file-input" accept=".pdf" required aria-describedby="resumeFeedback">
-                    <label for="resume" class="form-label">Resume (PDF)</label>
-                    <span id="resumeFeedback" class="invalid-feedback">Upload a PDF</span>
-                  </div>
-                  <div class="form-field file-field">
-                    <input type="file" id="coverLetter" name="coverLetter" class="form-input file-input" accept=".pdf" aria-describedby="coverLetterFeedback">
-                    <label for="coverLetter" class="form-label">Cover Letter (Optional, PDF)</label>
-                    <span id="coverLetterFeedback" class="invalid-feedback">Upload a PDF</span>
-                  </div>
-                  <div class="form-field">
-                    <select id="gender" name="gender" class="form-input" required aria-describedby="genderFeedback">
-                      <option value="" disabled selected></option>
-                      <option value="M">Male</option>
-                      <option value="F">Female</option>
-                      <option value="O">Other</option>
-                    </select>
-                    <label for="gender" class="form-label">Gender</label>
-                    <span id="genderFeedback" class="invalid-feedback">Select gender</span>
-                  </div>
-                  <div class="form-field">
-                    <select id="physicallyChallenged" name="physicallyChallenged" class="form-input" required aria-describedby="physicallyChallengedFeedback">
-                      <option value="" disabled selected></option>
-                      <option value="N">No</option>
-                      <option value="Y">Yes</option>
-                    </select>
-                    <label for="physicallyChallenged" class="form-label">Physically Challenged</label>
-                    <span id="physicallyChallengedFeedback" class="invalid-feedback">Select an option</span>
-                  </div>
-                  <div class="form-field">
-                    <select id="experience" name="experience" class="form-input" required aria-describedby="experienceFeedback">
-                      <option value="" disabled selected></option>
-                      <option value="0-2">0-2</option>
-                      <option value="3-5">3-5</option>
-                      <option value="5+">5+</option>
-                    </select>
-                    <label for="experience" class="form-label">Years of Experience</label>
-                    <span id="experienceFeedback" class="invalid-feedback">Select experience</span>
-                  </div>
-                  <div class="form-field">
-                    <select id="jobType" name="jobType" class="form-input" required aria-describedby="jobTypeFeedback">
-                      <option value="" disabled selected></option>
-                      <option value="FT">Full-Time</option>
-                      <option value="PT">Part-Time</option>
-                      <option value="C">Contract</option>
-                    </select>
-                    <label for="jobType" class="form-label">Preferred Job Type</label>
-                    <span id="jobTypeFeedback" class="invalid-feedback">Select job type</span>
-                  </div>
-                </div>
-                <button type="submit" class="form-submit-btn">Submit Application</button>
-              </form>
+              <div class="form-header" data-aos="fade-up">
+                <h3 class="form-title">Apply for <span class="hero-title">This Position</span></h3>
+                <p class="subtitle">Complete the form below to submit your application</p>
+              </div>
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSc9X9o_IF3MHOGbRGDv-0QGZHoCEgrZwV_buKz_M-aFhDLS7g/viewform?embedded=true"
+                class="google-form-iframe"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                title="EduHire Job Application Form"
+                aria-label="Form to apply for a teaching job"
+                loading="lazy"
+                scrolling="yes"
+              ></iframe>
             </div>
           </div>
         </div>
@@ -227,5 +120,7 @@
     });
   </script>
   <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93445cb8afbb6765',t:'MTc0NTMxNjk0OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93a8f4150aa8afb3',t:'MTc0NjM3MTcyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93a95f56c90db0c4',t:'MTc0NjM3NjExOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>

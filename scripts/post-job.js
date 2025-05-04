@@ -1,77 +1,64 @@
-import { validateForm, initStateDistrictDropdowns, showNotification } from './global/utils.js';
-import { stateDistricts } from './global/data.js';
+import { showNotification } from './global/utils.js';
 
 export function initPostJob() {
   const cleanupFunctions = [];
 
-  // Initialize form validation
-  const form = document.getElementById('post-job-form');
-  if (form) {
-    cleanupFunctions.push(
-      validateForm(form, {
-        successMessage: 'Job posted successfully! It will be reviewed soon.',
-        errorMessage: 'Failed to post job. Please try again.'
-      })
-    );
-    
-    // Custom validation for multiple select (gradeLevel)
-    const gradeLevelSelect = document.getElementById('gradeLevel');
-    if (gradeLevelSelect) {
-      const handleGradeLevelChange = () => {
-        const selectedOptions = Array.from(gradeLevelSelect.selectedOptions).map(option => option.value);
-        if (selectedOptions.length === 0 || selectedOptions.includes('')) {
-          gradeLevelSelect.classList.add('is-invalid');
-          gradeLevelSelect.nextElementSibling.textContent = 'Please select at least one grade level';
-        } else {
-          gradeLevelSelect.classList.remove('is-invalid');
-        }
-      };
-      gradeLevelSelect.addEventListener('change', handleGradeLevelChange);
-      cleanupFunctions.push(() => gradeLevelSelect.removeEventListener('change', handleGradeLevelChange));
-    }
-
-    // Custom validation for state and district
-    const stateSelect = document.getElementById('state');
-    const districtSelect = document.getElementById('district');
-    if (stateSelect && districtSelect) {
-      const handleStateChange = () => {
-        if (!stateSelect.value) {
-          stateSelect.classList.add('is-invalid');
-          stateSelect.nextElementSibling.textContent = 'Please select a state';
-        } else {
-          stateSelect.classList.remove('is-invalid');
-        }
-      };
-      const handleDistrictChange = () => {
-        if (!districtSelect.value) {
-          districtSelect.classList.add('is-invalid');
-          districtSelect.nextElementSibling.textContent = 'Please select a district';
-        } else {
-          districtSelect.classList.remove('is-invalid');
-        }
-      };
-      stateSelect.addEventListener('change', handleStateChange);
-      districtSelect.addEventListener('change', handleDistrictChange);
-      cleanupFunctions.push(() => stateSelect.removeEventListener('change', handleStateChange));
-      cleanupFunctions.push(() => districtSelect.removeEventListener('change', handleDistrictChange));
-    }
-  }
-  
-  // Initialize state/district dropdowns with error handling
-  if (!stateDistricts || Object.keys(stateDistricts).length === 0) {
-    console.error('stateDistricts data is empty or undefined');
-    showNotification('Failed to load state/district data. Please try again.', 'error');
-  } else {
-    cleanupFunctions.push(initStateDistrictDropdowns('state', 'district', stateDistricts));
-  }
-  
   // Initialize particles animation
   initParticles();
+
+  // Handle iframe load and errors
+  const iframe = document.querySelector('.google-form-iframe');
+  if (iframe) {
+    iframe.addEventListener('load', () => {
+      console.log('Google Form loaded successfully');
+      gtag('event', 'form_load', { event_category: 'Post Job', event_label: 'Google Form' });
+      adjustIframeHeight();
+    });
+    iframe.addEventListener('error', () => {
+      showNotification(
+        'Failed to load the job posting form. Please try again or contact support.',
+        'error'
+      );
+      iframe.style.display = 'none';
+      const errorMessage = document.createElement('div');
+      errorMessage.className = 'form-error';
+      errorMessage.innerHTML = `
+        <p class="text-danger">Unable to load the form. Please <a href="mailto:support@eduhire.in">contact support</a>.</p>
+      `;
+      iframe.parentElement.appendChild(errorMessage);
+    });
+
+    // Handle form submission and height updates
+    window.addEventListener('message', (event) => {
+      if (event.origin.includes('docs.google.com')) {
+        if (event.data.submitted) {
+          showNotification('Job posted successfully!', 'success');
+        }
+        if (event.data.height) {
+          iframe.style.height = `${event.data.height}px`;
+        }
+      }
+    });
+  }
+
+  // Dynamic iframe height adjustment
+  function adjustIframeHeight() {
+    if (!iframe) return;
+    const minHeight =
+      window.innerWidth < 576 ? 1800 :
+      window.innerWidth < 768 ? 1600 :
+      window.innerWidth < 992 ? 1400 : 1200;
+    iframe.style.height = `${minHeight}px`;
+  }
+
+  window.addEventListener('load', adjustIframeHeight);
+  window.addEventListener('resize', adjustIframeHeight);
+  cleanupFunctions.push(() => window.removeEventListener('resize', adjustIframeHeight));
 
   return () => cleanupFunctions.forEach(fn => fn());
 }
 
-// Particles Animation - Consistent with job-detail.js
+// Particles Animation (unchanged)
 function initParticles() {
   const canvas = document.querySelector(".job-particles");
   if (!canvas) return;
@@ -95,8 +82,6 @@ function initParticles() {
     update() {
       this.x += this.speedX;
       this.y += this.speedY;
-      
-      // Wrap around edges
       if (this.x < 0) this.x = canvas.width;
       if (this.x > canvas.width) this.x = 0;
       if (this.y < 0) this.y = canvas.height;
@@ -129,7 +114,6 @@ function initParticles() {
   init();
   animate();
 
-  // Handle window resize
   const handleResize = () => {
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;

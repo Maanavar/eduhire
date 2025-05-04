@@ -60,188 +60,22 @@
           </ol>
         </nav>
         
-        <div class="job-detail-content">
-          <div class="section-header" data-aos="fade-up">
-            <span class="section-subtitle">Post Openings</span>
-            <h2 class="section-title">Post a <span class="hero-title">Teaching Position</span></h2>
-            <p class="subtitle">Reach thousands of qualified educators across India</p>
-          </div>
-          
-          <div class="job-details-card" data-aos="fade-up">
-            <form id="post-job-form" class="post-job-form needs-validation" novalidate action="https://formsubmit.co/azaxissoftware@gmail.com" method="POST" enctype="multipart/form-data">
-              <input type="hidden" name="_mailto" value="azaxissoftware@gmail.com">
-              <input type="hidden" name="_subject" value="New Job Posting from EduHire">
-              <input type="hidden" name="_captcha" value="true">
-              <input type="hidden" name="_next" value="https://www.theeduhire.com/thank-you.html">
-              <input type="text" name="_honeypot" style="display:none">
-              <div class="form-grid">
-                <!-- School Information -->
-                <div class="form-section">
-                  <h3 class="form-section-title">School Information</h3>
-                  <div class="form-field">
-                    <input type="text" id="schoolName" name="schoolName" class="form-input" placeholder=" " required aria-describedby="schoolNameFeedback">
-                    <label for="schoolName" class="form-label">School Name</label>
-                    <span id="schoolNameFeedback" class="invalid-feedback">Please enter the school name</span>
-                  </div>
-                  <div class="form-field">
-                    <input type="text" id="schoolAddress" name="schoolAddress" class="form-input" placeholder=" " required aria-describedby="schoolAddressFeedback">
-                    <label for="schoolAddress" class="form-label">School Address</label>
-                    <span id="schoolAddressFeedback" class="invalid-feedback">Please enter the school address</span>
-                  </div>
-                  <div class="form-field">
-                    <select id="state" name="state" class="form-input" required aria-describedby="stateFeedback">
-                      <option value="" disabled selected>Select State</option>
-                    </select>
-                    <label for="state" class="form-label">State</label>
-                    <span id="stateFeedback" class="invalid-feedback">Please select a state</span>
-                  </div>
-                  <div class="form-field">
-                    <select id="district" name="district" class="form-input" required aria-describedby="districtFeedback">
-                      <option value="" disabled selected>Select District</option>
-                    </select>
-                    <label for="district" class="form-label">District</label>
-                    <span id="districtFeedback" class="invalid-feedback">Please select a district</span>
-                  </div>
-                  <div class="form-field">
-                    <select id="schoolType" name="schoolType" class="form-input" required aria-describedby="schoolTypeFeedback">
-                      <option value="" disabled selected>Select School Type</option>
-                      <option value="public">Public School</option>
-                      <option value="private">Private School</option>
-                      <option value="international">International School</option>
-                      <option value="cbse">CBSE Affiliated</option>
-                      <option value="icse">ICSE Affiliated</option>
-                      <option value="ib">IB School</option>
-                    </select>
-                    <label for="schoolType" class="form-label">School Type</label>
-                    <span id="schoolTypeFeedback" class="invalid-feedback">Please select a school type</span>
-                  </div>
-                </div>
-                
-                <!-- Job Details -->
-                <div class="form-section">
-                  <h3 class="form-section-title">Job Details</h3>
-                  <div class="form-field">
-                    <input type="text" id="jobTitle" name="jobTitle" class="form-input" placeholder=" " required aria-describedby="jobTitleFeedback">
-                    <label for="jobTitle" class="form-label">Job Title</label>
-                    <span id="jobTitleFeedback" class="invalid-feedback">Please enter the job title</span>
-                  </div>
-                  <div class="form-field">
-                    <select id="jobType" name="jobType" class="form-input" required aria-describedby="jobTypeFeedback">
-                      <option value="" disabled selected>Select Job Type</option>
-                      <option value="full-time">Full-Time</option>
-                      <option value="part-time">Part-Time</option>
-                      <option value="contract">Contract</option>
-                      <option value="visiting">Visiting Faculty</option>
-                    </select>
-                    <label for="jobType" class="form-label">Job Type</label>
-                    <span id="jobTypeFeedback" class="invalid-feedback">Please select a job type</span>
-                  </div>
-                  <div class="form-field">
-                    <select id="subject" name="subject" class="form-input" required aria-describedby="subjectFeedback">
-                      <option value="" disabled selected>Select Subject</option>
-                      <option value="math">Mathematics</option>
-                      <option value="science">Science</option>
-                      <option value="english">English</option>
-                      <option value="social">Social Studies</option>
-                      <option value="hindi">Hindi</option>
-                      <option value="computer">Computer Science</option>
-                      <option value="physics">Physics</option>
-                      <option value="chemistry">Chemistry</option>
-                      <option value="biology">Biology</option>
-                      <option value="commerce">Commerce</option>
-                      <option value="economics">Economics</option>
-                      <option value="arts">Arts</option>
-                      <option value="physical">Physical Education</option>
-                    </select>
-                    <label for="subject" class="form-label">Subject</label>
-                    <span id="subjectFeedback" class="invalid-feedback">Please select a subject</span>
-                  </div>
-                  <div class="form-field">
-                    <select id="gradeLevel" name="gradeLevel[]" class="form-input" required multiple aria-describedby="gradeLevelFeedback">
-                      <option value="" disabled>Select Grade Level(s)</option>
-                      <option value="pre-k">Pre-K</option>
-                      <option value="primary">Primary (1-5)</option>
-                      <option value="middle">Middle School (6-8)</option>
-                      <option value="high">High School (9-10)</option>
-                      <option value="senior">Senior Secondary (11-12)</option>
-                    </select>
-                    <label for="gradeLevel" class="form-label">Grade Level(s)</label>
-                    <span id="gradeLevelFeedback" class="invalid-feedback">Please select at least one grade level</span>
-                  </div>
-                </div>
-                
-                <!-- Requirements & Benefits -->
-                <div class="form-section">
-                  <h3 class="form-section-title">Requirements & Benefits</h3>
-                  <div class="form-field">
-                    <select id="experience" name="experience" class="form-input" required aria-describedby="experienceFeedback">
-                      <option value="" disabled selected>Select Experience</option>
-                      <option value="0-2">0-2 years</option>
-                      <option value="3-5">3-5 years</option>
-                      <option value="5+">5+ years</option>
-                    </select>
-                    <label for="experience" class="form-label">Minimum Experience</label>
-                    <span id="experienceFeedback" class="invalid-feedback">Please select an experience level</span>
-                  </div>
-                  <div class="form-field">
-                    <select id="qualification" name="qualification" class="form-input" required aria-describedby="qualificationFeedback">
-                      <option value="" disabled selected>Select Qualification</option>
-                      <option value="bachelor">Bachelor's Degree</option>
-                      <option value="master">Master's Degree</option>
-                      <option value="b-ed">B.Ed</option>
-                      <option value="m-ed">M.Ed</option>
-                      <option value="phd">PhD</option>
-                    </select>
-                    <label for="qualification" class="form-label">Minimum Qualification</label>
-                    <span id="qualificationFeedback" class="invalid-feedback">Please select a qualification</span>
-                  </div>
-                  <div class="form-field">
-                    <input type="text" id="salary" name="salary" class="form-input" placeholder=" " required pattern="[0-9]+" aria-describedby="salaryFeedback">
-                    <label for="salary" class="form-label">Salary (₹ per month)</label>
-                    <span id="salaryFeedback" class="invalid-feedback">Please enter a valid salary</span>
-                  </div>
-                  <div class="form-field">
-                    <textarea id="benefits" name="benefits" class="form-input" placeholder=" " rows="3" aria-describedby="benefitsFeedback"></textarea>
-                    <label for="benefits" class="form-label">Benefits (Optional)</label>
-                    <span id="benefitsFeedback" class="invalid-feedback"></span>
-                  </div>
-                </div>
-                
-                <!-- Job Description -->
-                <div class="form-section full-width">
-                  <h3 class="form-section-title">Job Description</h3>
-                  <div class="form-field">
-                    <textarea id="description" name="description" class="form-input" placeholder=" " rows="5" required aria-describedby="descriptionFeedback"></textarea>
-                    <label for="description" class="form-label">Detailed Job Description</label>
-                    <span id="descriptionFeedback" class="invalid-feedback">Please enter a job description</span>
-                  </div>
-                </div>
-                
-                <!-- Contact Information -->
-                <div class="form-section">
-                  <h3 class="form-section-title">Contact Information</h3>
-                  <div class="form-field">
-                    <input type="text" id="contactName" name="contactName" class="form-input" placeholder=" " required aria-describedby="contactNameFeedback">
-                    <label for="contactName" class="form-label">Contact Person</label>
-                    <span id="contactNameFeedback" class="invalid-feedback">Please enter the contact person's name</span>
-                  </div>
-                  <div class="form-field">
-                    <input type="email" id="contactEmail" name="contactEmail" class="form-input" placeholder=" " required aria-describedby="contactEmailFeedback">
-                    <label for="contactEmail" class="form-label">Email</label>
-                    <span id="contactEmailFeedback" class="invalid-feedback">Please enter a valid email address</span>
-                  </div>
-                  <div class="form-field">
-                    <input type="tel" id="contactPhone" name="contactPhone" class="form-input" placeholder=" " required pattern="[0-9]{10}" aria-describedby="contactPhoneFeedback">
-                    <label for="contactPhone" class="form-label">Phone Number</label>
-                    <span id="contactPhoneFeedback" class="invalid-feedback">Please enter a 10-digit phone number</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="form-actions">
-                <button type="submit" class="form-submit-btn">Post Job <i class="fas fa-paper-plane"></i></button>
-              </div>
-            </form>
+        <div class="job-details-card" data-aos="fade-up">
+          <div class="post-job-form">
+            <div class="form-header" data-aos="fade-up">
+              <h3 class="form-title">Post a Teaching Job</h3>
+              <p class="form-subtitle">Fill out the details below to reach educators across India</p>
+            </div>
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSeNBgD39AQ0B4tbUxP-C6ttHG85IEdgpzVCzgq4QeabUBx6ZA/viewform?embedded=true"
+              class="google-form-iframe"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              title="EduHire Job Posting Form"
+              aria-label="Form to post a teaching job"
+              loading="lazy"
+            ></iframe>
           </div>
         </div>
       </div>
@@ -265,5 +99,6 @@
     });
   </script>
   <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9344ef1b7c2eb0b7',t:'MTc0NTMyMjk0NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93a98d68ba5cbfff',t:'MTc0NjM3ODAwNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>

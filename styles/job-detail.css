@@ -65,6 +65,30 @@
   overflow: hidden;
 }
 
+.job-details-card h2 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight:500;
+  color: var(--dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+.job-details-card p {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--text);
+  margin-bottom: var(--spacing-xs);
+}
+
+.job-details-card p strong {
+  color: var(--primary);
+}
+
+.job-details-card .error {
+  color: var(--danger);
+  font-style: italic;
+}
+
 .job-details-card:hover {
   box-shadow: 0 15px 40px rgba(107, 72, 255, 0.25);
   transform: translateY(-5px);
@@ -95,7 +119,7 @@
   border: 1px solid rgba(107, 72, 255, 0.2);
   position: relative;
   transition: all 0.4s ease;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .job-application-card:hover {
@@ -118,12 +142,19 @@
   animation: hologramShift 6s infinite ease-in-out;
 }
 
-.form-title {
-  font-size: clamp(1.5rem, 3.5vw, 2rem);
-  font-weight: 800;
-  color: var(--dark, #1a1a1a);
-  margin-bottom: var(--spacing-sm);
+.form-header {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: var(--white);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
   text-align: center;
+  animation: hologramShift 6s infinite ease-in-out;
+}
+
+.form-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-sm);
 }
 
 .hero-title {
@@ -133,124 +164,54 @@
 }
 
 .subtitle {
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
-  color: var(--text, #333);
-  margin-bottom: var(--spacing-lg);
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+}
+
+.form-error {
   text-align: center;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-md);
-}
-
-.form-field {
-  position: relative;
-  margin-bottom: var(--spacing-md);
-}
-
-.form-input {
-  width: 100%;
-  padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 2.5vw, 1.25rem);
-  font-size: clamp(0.875rem, 2vw, 1rem);
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(107, 72, 255, 0.3);
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 1;
-}
-
-.form-input:focus {
-  border-color: var(--primary, #4361ee);
-  box-shadow: 0 0 8px rgba(107, 72, 255, 0.5);
-  background: rgba(255, 255, 255, 0.9);
-  outline: none;
-}
-
-.form-input:invalid:focus {
-  border-color: var(--dark, #1a1a1a);
-  box-shadow: 0 0 8px rgba(255, 111, 97, 0.5);
-}
-
-.form-label {
-  position: absolute;
-  top: 50%;
-  left: clamp(1rem, 2.5vw, 1.25rem);
-  font-size: clamp(0.875rem, 2vw, 1rem);
-  color: var(--text, #333);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 255, 0.9));
-  padding: 0 0.25rem;
-  transform: translateY(-50%);
-  transition: all 0.3s ease;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.form-input:focus + .form-label,
-.form-input:not(:placeholder-shown) + .form-label {
-  top: -0.5rem;
-  font-size: clamp(0.75rem, 1.8vw, 0.875rem);
-  color: var(--dark, #1a1a1a);
-}
-
-.form-input:focus:invalid + .form-label {
-  color: var(--dark, #1a1a1a);
-}
-
-.invalid-feedback {
-  font-size: clamp(0.75rem, 1.8vw, 0.875rem);
-  color: red;
-  position: absolute;
-  bottom: -1.25rem;
-  left: 0;
-  display: none;
-}
-
-.was-validated .form-input:invalid ~ .invalid-feedback {
-  display: block;
-}
-
-.file-field .form-input {
-  padding: clamp(0.5rem, 1.5vw, 0.75rem);
-}
-
-.form-submit-btn {
-  width: 100%;
-  padding: clamp(0.75rem, 2vw, 1rem);
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
-  background: linear-gradient(135deg, var(--primary, #4361ee), var(--accent, #00dde3));
-  color: var(--white, #fff);
-  border: none;
-  border-radius: 30px;
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
+  padding: var(--spacing-md);
+  background: var(--danger);
+  color: var(--white);
+  border-radius: var(--border-radius);
   margin-top: var(--spacing-md);
 }
 
-.form-submit-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(107, 72, 255, 0.4);
+.form-error a {
+  color: var(--white);
+  text-decoration: underline;
 }
 
-.form-submit-btn::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: width 0.6s ease, height 0.6s ease;
+.google-form-iframe {
+  width: 100%;
+  min-height: 1500px;
+  border: none;
+  border-radius: var(--border-radius, 12px);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+  overflow: auto;
 }
 
-.form-submit-btn:hover::before {
-  width: 200%;
-  height: 200%;
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.job-application-card:hover .google-form-iframe {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.google-form-iframe:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 /* Floating Elements */
@@ -373,7 +334,7 @@
   position: relative;
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   transform-style: preserve-3d;
-  min-height: 300px; /* Ensure consistent card height */
+  min-height: 300px;
 }
 
 .related-jobs .job-card:hover {
@@ -569,6 +530,10 @@
     font-size: clamp(0.875rem, 2vw, 1rem);
     padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.875rem, 2vw, 1.25rem);
   }
+
+  .google-form-iframe {
+    min-height: 1700px;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -591,6 +556,10 @@
 
   .related-jobs .job-card {
     min-height: 260px;
+  }
+
+  .google-form-iframe {
+    min-height: 1900px;
   }
 }
 
@@ -638,6 +607,34 @@
 
   .related-jobs .salary {
     font-size: clamp(0.875rem, 2vw, 1rem);
+  }
+
+  .google-form-iframe {
+    min-height: 2100px;
+  }
+
+  .form-header {
+    padding: var(--spacing-sm);
+  }
+
+  .form-title {
+    font-size: var(--font-size-md);
+  }
+
+  .subtitle {
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (min-width: 992px) {
+  .google-form-iframe {
+    min-height: 1500px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .google-form-iframe {
+    min-height: 1300px;
   }
 }
 
