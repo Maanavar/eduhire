@@ -1,6 +1,4 @@
 :root {
-
-  
   /* Spacing System */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -42,7 +40,7 @@
   --text: #4A4A68;
   --text-light: #6c757d;
   --text-muted: #bec3c6;
-  --text-body: #4a4a4a
+  --text-body: #4a4a4a;
   --ctaText: #FFFFFF;
   --success: #4bbf73;
   --warning: #f0ad4e;
@@ -87,15 +85,17 @@
 }
 
 .btn-primary {
-  background-color: var(--primary);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--dark);
+  border: 2px solid;
   box-shadow: 0 4px 14px rgba(107, 72, 255, 0.3);
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-dark);
+  background-color: var(--neutral);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(107, 72, 255, 0.4);
+  color: var(--primary);
 }
 
 .btn-primary::after {
@@ -105,7 +105,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(255,255,255,0.1), rgba(255,255,255,0.3));
+  background: linear-gradient(to right, rgba(107, 72, 255, 0.1), rgba(107, 72, 255, 0.3));
   transform: translateX(-100%);
   transition: transform var(--transition-slow) ease;
   z-index: -1;

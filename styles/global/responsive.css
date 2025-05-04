@@ -1051,33 +1051,3 @@
   .footer-bottom a { font-size: clamp(0.875rem, 2vw, 1.25rem); }
 }
 
-/* Ensure AOS doesn't hide elements */
-[data-aos] {
-  opacity: 1 !important;
-  transform: none !important;
-  transition: none !important;
-}
-
-/* General visibility fixes */
-.jobs-grid,
-.job-card,
-#footer {
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-/* Ensure footer text is readable */
-#footer footer,
-#footer .footer-content,
-#footer p,
-#footer a,
-#footer span,
-#footer div {
-  color: #fff !important;
-  text-decoration: none !important;
-}
-
-#footer a:hover {
-  color: #f8f9fa !important;
-  text-decoration: underline !important;
-}
