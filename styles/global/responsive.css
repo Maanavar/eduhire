@@ -1,0 +1,707 @@
+/* Small mobile devices (up to 480px) */
+@media (max-width: 480px) {
+  .section { padding: var(--spacing-md) 0; }
+  .hero-section { padding: var(--spacing-lg) 0; }
+  .hero-container { 
+    grid-template-columns: 1fr; 
+    padding: var(--spacing-md); 
+    gap: var(--spacing-md);
+  }
+  .hero-content { 
+    padding: var(--spacing-md); 
+    text-align: center; 
+  }
+  .hero-content h1 { font-size: clamp(1.75rem, 6vw, 2.25rem); }
+  .hero-content .subtitle { font-size: clamp(0.875rem, 2.5vw, 1rem); }
+  .search-bar { 
+    flex-direction: column; 
+    padding: 0.5rem; 
+    max-width: 300px; 
+    margin: 0 auto;
+  }
+  .search-input, .search-btn { 
+    font-size: clamp(0.75rem, 2.5vw, 0.875rem); 
+    padding: 0.5rem 1rem; 
+    width: 100%; 
+  }
+  .hero-visuals { 
+    margin-top: var(--spacing-md); 
+  }
+  .hero-visuals .hero-particles, .floating-element, .element-sphere, .element-pulse { 
+    display: none; 
+  } /* Optimize performance */
+  .stats-cluster {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    padding: 0 var(--spacing-sm);
+  }
+  .stat-orb { 
+    height: clamp(60px, 18vw, 70px); 
+    width: clamp(60px, 18vw, 70px); 
+    flex: 0 0 auto; 
+  }
+  .stat-value { font-size: clamp(0.75rem, 2.5vw, 0.875rem); }
+  .stat-label { font-size: clamp(0.625rem, 2vw, 0.75rem); }
+  .about-content { grid-template-columns: 1fr; text-align: center; }
+  .about-visual { min-height: 300px; margin-top: var(--spacing-lg); }
+  .signature { text-align: center; }
+  .element-dot, .element-ring { transform: scale(0.6); }
+  .benefits-grid { grid-template-columns: 1fr; max-width: 300px; margin: 0 auto; }
+  .steps-container { grid-template-columns: 1fr; max-width: 300px; margin: 0 auto; }
+  .explore-card { flex: 0 0 calc(100% - var(--spacing-sm)); }
+  .explore-card img { height: 200px; }
+  .explore-card-content { padding: var(--spacing-sm); }
+  .logos-grid { grid-template-columns: repeat(2, 1fr); gap: var(--spacing-md); }
+  .logos-grid img { max-width: 100px; }
+  .featured-jobs { padding: var(--spacing-lg) 0; }
+  .view-all { font-size: clamp(0.75rem, 2.5vw, 0.875rem); }
+  .jobs-grid { grid-template-columns: 1fr; gap: var(--spacing-sm); }
+  .job-card-title { font-size: clamp(1rem, 3vw, 1.25rem); }
+  .job-card-meta { font-size: clamp(0.625rem, 2vw, 0.75rem); }
+  .job-card-body p { font-size: clamp(0.75rem, 2.5vw, 0.875rem); }
+  .salary { font-size: clamp(0.875rem, 2.5vw, 1rem); }
+  .job-card-footer .btn { 
+    font-size: clamp(0.75rem, 2.5vw, 0.875rem); 
+    padding: clamp(0.375rem, 2vw, 0.5rem) clamp(0.75rem, 2.5vw, 1rem); 
+  }
+  .testimonial-slider { padding: 0 var(--spacing-md); max-width: 100%; }
+  .cta-section { padding: var(--spacing-lg) 0; }
+  .cta-content { padding: var(--spacing-sm); }
+  .cta-section h2 { font-size: clamp(1.25rem, 6vw, 1.75rem); }
+  .cta-section p { font-size: clamp(0.75rem, 3vw, 0.875rem); }
+  .cta-buttons { flex-direction: column; gap: var(--spacing-sm); }
+  .cta-buttons .btn { 
+    padding: clamp(0.375rem, 2vw, 0.5rem) clamp(0.75rem, 3vw, 1rem); 
+    font-size: clamp(0.75rem, 2.5vw, 0.875rem); 
+    min-width: 100%; 
+  }
+  .faq-item { margin-bottom: var(--spacing-sm); }
+  .navbar.navbar-expand-lg { padding: var(--spacing-sm) 0 !important; }
+  .navbar-collapse { padding: var(--spacing-md); }
+  .navbar-nav { flex-direction: column; align-items: center; gap: var(--spacing-lg); }
+  .nav-link { padding: var(--spacing-md); font-size: var(--font-size-md); }
+  .nav-cta { width: 100%; justify-content: center; }
+  .brand-text { font-size: clamp(1.25rem, 3vw, 2rem); }
+  .navbar-toggler { padding: var(--spacing-xs); }
+  .footer-content { grid-template-columns: 1fr; text-align: center; gap: var(--spacing-md); }
+  .footer-section h4 { font-size: clamp(1rem, 3vw, 1.25rem); }
+  .footer-section h4::after { left: 50%; transform: translateX(-50%); width: 30px; }
+  .footer-section:hover h4::after { width: 40px; }
+  .footer-logo { font-size: clamp(1.5rem, 4vw, 2rem); }
+  .footer-tagline { font-size: clamp(0.75rem, 2.5vw, 0.875rem); }
+  .footer-links a { font-size: clamp(0.75rem, 2.5vw, 0.875rem); }
+  .footer-links-explore a.active::after { width: 30%; bottom: -1px; }
+  .footer-links-explore a:hover, .footer-links-explore a.active { transform: translateX(3px); }
+  .footer-links-get-started a:hover { transform: translateX(3px); }
+  .social-links { justify-content: center; gap: var(--spacing-xs); }
+  .social-icon { width: 32px; height: 32px; font-size: 0.875rem; }
+  .footer-contact p { justify-content: center; font-size: clamp(0.75rem, 2.5vw, 0.875rem); }
+  .footer-contact i { font-size: 0.875rem; }
+  .footer-bottom p { font-size: clamp(0.75rem, 2vw, 0.875rem); white-space: nowrap; }
+  .footer-bottom a { font-size: clamp(0.75rem, 2vw, 0.875rem); }
+}
+
+/* Mobile (360px - 575.98px) */
+@media (min-width: 360px) and (max-width: 575.98px) {
+  .section { padding: var(--spacing-lg) 0; }
+  .hero-container { 
+    padding: var(--spacing-lg); 
+    gap: var(--spacing-md);
+  }
+  .hero-content h1 { 
+    font-size: clamp(1.8rem, 9vw, 2.5rem); 
+    margin-bottom: var(--spacing-sm); 
+  }
+  .hero-content .subtitle { 
+    font-size: clamp(0.9rem, 4vw, 1.2rem); 
+    margin-bottom: var(--spacing-md); 
+  }
+  .search-bar { 
+    flex-direction: column; 
+    padding: 0.25rem; 
+    max-width: 350px; 
+    margin: 0 auto; 
+  }
+  .search-input { width: 100%; padding: var(--spacing-sm); }
+  .search-btn { width: 90%; margin-top: var(--spacing-xs); }
+  .hero-visuals { 
+    margin-top: var(--spacing-md); 
+  }
+  .element-sphere, .element-pulse { transform: scale(0.6); }
+  .stats-cluster { 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    padding: 0 var(--spacing-md);
+  }
+  .stat-orb { 
+    width: clamp(70px, 20vw, 80px); 
+    height: clamp(70px, 20vw, 80px); 
+    flex: 0 0 auto; 
+  }
+  .stat-orb-inner { width: 90%; height: 90%; }
+  .stat-value { font-size: clamp(0.875rem, 3vw, 1rem); }
+  .stat-label { font-size: clamp(0.75rem, 2vw, 0.875rem); }
+  .about-content { grid-template-columns: 1fr; text-align: center; }
+  .about-visual { min-height: 300px; margin-top: var(--spacing-lg); }
+  .signature { text-align: center; }
+  .element-dot, .element-ring { transform: scale(0.6); }
+  .benefits-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+  .steps-container { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+  .explore-card { flex: 0 0 calc(100% - var(--spacing-sm)); }
+  .logos-grid { grid-template-columns: repeat(2, 1fr); gap: var(--spacing-lg); }
+  .logos-grid img { max-width: 120px; }
+  .featured-jobs { padding: var(--spacing-lg) 0; }
+  .view-all { font-size: clamp(0.875rem, 2.5vw, 1rem); }
+  .jobs-grid { grid-template-columns: 1fr; gap: var(--spacing-md); }
+  .job-card-title { font-size: clamp(1.125rem, 3vw, 1.375rem); }
+  .job-card-meta { font-size: clamp(0.75rem, 2vw, 0.875rem); }
+  .job-card-body p { font-size: clamp(0.875rem, 2.5vw, 1rem); }
+  .salary { font-size: clamp(0.9375rem, 2.5vw, 1.125rem); }
+  .job-card-footer .btn { 
+    font-size: clamp(0.875rem, 2.5vw, 1rem); 
+    padding: clamp(0.5rem, 2vw, 0.625rem) clamp(0.875rem, 2.5vw, 1.25rem); 
+  }
+  .testimonial-slider { padding: 0 var(--spacing-lg); }
+  .cta-section { padding: var(--spacing-lg) 0; }
+  .cta-content { padding: var(--spacing-md); }
+  .cta-section h2 { font-size: clamp(1.5rem, 5vw, 2rem); }
+  .cta-section p { font-size: clamp(0.875rem, 2.5vw, 1rem); }
+  .cta-buttons { flex-direction: column; gap: var(--spacing-md); }
+  .cta-buttons .btn { 
+    padding: clamp(0.5rem, 2vw, 0.625rem) clamp(0.875rem, 3vw, 1.25rem); 
+    font-size: clamp(0.875rem, 2.5vw, 1rem); 
+    min-width: 100%; 
+  }
+  .navbar { padding: var(--spacing-sm) 0; }
+  .navbar-collapse { 
+    background: rgba(255, 255, 255, 0.95); 
+    border-radius: var(--border-radius-lg); 
+    padding: var(--spacing-md); 
+    margin-top: var(--spacing-sm); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+  }
+  .navbar-nav { 
+    flex-direction: column; 
+    align-items: center; 
+    gap: var(--spacing-lg); 
+    padding: var(--spacing-md); 
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(12px); 
+  }
+  .nav-link { 
+    padding: var(--spacing-sm) var(--spacing-md); 
+    border-radius: 25px; 
+  }
+  .nav-link::after { display: none; }
+  .nav-cta { width: 100%; justify-content: center; }
+  .brand-text { font-size: clamp(1.25rem, 3vw, 2rem); }
+  .navbar-toggler { padding: var(--spacing-xs); }
+  .footer-content { grid-template-columns: 1fr; text-align: center; gap: var(--spacing-lg); }
+  .footer-section h4 { font-size: clamp(1.125rem, 3vw, 1.375rem); }
+  .footer-section h4::after { left: 50%; transform: translateX(-50%); }
+  .footer-logo { font-size: clamp(1.75rem, 4vw, 2.25rem); }
+  .footer-tagline { font-size: clamp(0.875rem, 2.5vw, 1rem); }
+  .footer-links a { font-size: clamp(0.875rem, 2.5vw, 1rem); }
+  .footer-links-explore a.active::after { width: 40%; bottom: -2px; }
+  .footer-links-explore a:hover, .footer-links-explore a.active { transform: translateX(4px); }
+  .footer-links-get-started a:hover { transform: translateX(4px); }
+  .social-links { justify-content: center; gap: var(--spacing-sm); }
+  .social-icon { width: 36px; height: 36px; font-size: 1rem; }
+  .footer-contact p { justify-content: center; font-size: clamp(0.875rem, 2.5vw, 1rem); }
+  .footer-contact i { font-size: 1rem; }
+  .footer-bottom p { font-size: clamp(0.75rem, 2vw, 0.875rem); white-space: nowrap; }
+  .footer-bottom a { font-size: clamp(0.75rem, 2vw, 0.875rem); }
+}
+
+/* Small tablets (576px - 767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .section { padding: var(--spacing-xl) 0; }
+  .hero-container { 
+    padding: var(--spacing-xl); 
+    gap: var(--spacing-lg);
+  }
+  .hero-content h1 { font-size: clamp(2rem, 6vw, 2.8rem); }
+  .hero-content .subtitle { font-size: clamp(1rem, 3vw, 1.3rem); }
+  .search-bar { 
+    flex-direction: row; 
+    padding: var(--spacing-sm); 
+    max-width: 500px; 
+    margin: 0 auto; 
+  }
+  .hero-visuals { 
+    margin-top: var(--spacing-lg); 
+  }
+  .element-sphere, .element-pulse { transform: scale(0.8); }
+  .stats-cluster { 
+    flex-direction: row; 
+    gap: var(--spacing-lg); 
+    justify-content: center; 
+    max-width: 600px; 
+    margin: 0 auto; 
+  }
+  .stat-orb { 
+    width: clamp(100px, 20vw, 120px); 
+    height: clamp(100px, 20vw, 120px); 
+  }
+  .stat-value { font-size: clamp(1rem, 3vw, 1.25rem); }
+  .stat-label { font-size: clamp(0.75rem, 1.8vw, 0.875rem); }
+  .about-content { grid-template-columns: 1fr; text-align: center; }
+  .about-visual { min-height: 300px; margin-top: var(--spacing-lg); }
+  .signature { text-align: center; }
+  .element-dot, .element-ring { transform: scale(0.8); }
+  .benefits-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+  .steps-container { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+  .step { padding: var(--spacing-md); }
+  .step-icon { width: 60px; height: 60px; }
+  .step-icon i { font-size: 1.8rem; }
+  .step-number { width: 25px; height: 25px; font-size: var(--font-size-xs); }
+  .explore-card { flex: 0 0 calc(50% - var(--spacing-md) / 2); }
+  .logos-grid { grid-template-columns: repeat(2, 1fr); gap: var(--spacing-lg); }
+  .logos-grid img { max-width: 140px; }
+  .featured-jobs { padding: var(--spacing-xl) 0; }
+  .view-all { font-size: clamp(0.9375rem, 2vw, 1.125rem); }
+  .jobs-grid { grid-template-columns: 1fr; gap: var(--spacing-md); }
+  .job-card-title { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+  .job-card-meta { font-size: clamp(0.8125rem, 1.8vw, 0.9375rem); }
+  .job-card-body p { font-size: clamp(0.9375rem, 2vw, 1.125rem); }
+  .salary { font-size: clamp(1rem, 2vw, 1.25rem); }
+  .job-card-footer .btn { 
+    font-size: clamp(0.9375rem, 2vw, 1.125rem); 
+    padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 2vw, 1.5rem); 
+  }
+  .testimonial-slider { padding: 0 var(--spacing-xl); }
+  .cta-section { padding: var(--spacing-xl) 0; }
+  .cta-content { padding: var(--spacing-md); }
+  .cta-section h2 { font-size: clamp(1.75rem, 4vw, 2.25rem); }
+  .cta-section p { font-size: clamp(0.9375rem, 2vw, 1.125rem); }
+  .cta-buttons { flex-direction: row; gap: var(--spacing-md); }
+  .cta-buttons .btn { 
+    padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 2.5vw, 1.5rem); 
+    font-size: clamp(0.9375rem, 2vw, 1.125rem); 
+    min-width: 160px; 
+  }
+  .navbar-nav { gap: var(--spacing-sm); }
+  .nav-link { padding: var(--spacing-sm); }
+  .footer-content { grid-template-columns: repeat(2, 1fr); text-align: left; }
+  .footer-section h4 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
+  .footer-section h4::after { left: 0; transform: none; }
+  .footer-logo { font-size: clamp(2rem, 4vw, 2.5rem); }
+  .footer-tagline { font-size: clamp(0.875rem, 2vw, 1rem); }
+  .footer-links a { font-size: clamp(0.875rem, 2vw, 1rem); }
+  .footer-links-explore a.active::after { width: 50%; bottom: -2px; }
+  .footer-links-explore a:hover, .footer-links-explore a.active { transform: translateX(5px); }
+  .footer-links-get-started a:hover { transform: translateX(5px); }
+  .social-links { justify-content: flex-start; gap: var(--spacing-sm); }
+  .social-icon { width: 40px; height: 40px; font-size: 1rem; }
+  .footer-contact p { justify-content: flex-start; font-size: clamp(0.875rem, 2vw, 1rem); }
+  .footer-contact i { font-size: 1rem; }
+  .footer-bottom p { font-size: clamp(0.875rem, 2vw, 1rem); }
+  .footer-bottom a { font-size: clamp(0.875rem, 2vw, 1rem); }
+}
+
+/* Medium tablets (768px - 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .section { padding: var(--spacing-xxl) 0; }
+  .hero-container { 
+    grid-template-columns: 1fr; 
+    padding: var(--spacing-xxl); 
+    gap: var(--spacing-lg); 
+    max-width: 800px; 
+    margin: 0 auto; 
+  }
+  .hero-content { 
+    text-align: center; 
+    padding: var(--spacing-lg); 
+  }
+  .hero-content h1 { font-size: clamp(2.5rem, 6vw, 3rem); }
+  .hero-content .subtitle { font-size: clamp(1.125rem, 3vw, 1.5rem); }
+  .search-bar { 
+    max-width: 600px; 
+    margin: 0 auto; 
+    padding: var(--spacing-sm); 
+  }
+  .hero-visuals { 
+    margin-top: var(--spacing-lg); 
+  }
+  .element-sphere, .element-pulse { transform: scale(0.8); }
+  .stats-cluster { 
+    flex-direction: row; 
+    gap: var(--spacing-lg); 
+    justify-content: center; 
+    max-width: 700px; 
+    margin: 0 auto; 
+  }
+  .stat-orb { 
+    width: clamp(100px, 18vw, 120px); 
+    height: clamp(100px, 18vw, 120px); 
+  }
+  .stat-value { font-size: clamp(1.125rem, 3vw, 1.5rem); }
+  .stat-label { font-size: clamp(0.75rem, 1.5vw, 0.875rem); }
+  .about-content { grid-template-columns: 1fr; text-align: center; }
+  .about-visual { min-height: 300px; margin-top: var(--spacing-lg); }
+  .signature { text-align: center; }
+  .element-dot, .element-ring { transform: scale(0.8); }
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-container { grid-template-columns: repeat(2, 1fr); }
+  .step { padding: var(--spacing-md); }
+  .step-icon { width: 60px; height: 60px; }
+  .step-icon i { font-size: 1.8rem; }
+  .step-number { width: 25px; height: 25px; font-size: var(--font-size-xs); }
+  .explore-card { flex: 0 0 calc(33.33% - var(--spacing-md) * 2 / 3); }
+  .logos-grid { grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg); }
+  .featured-jobs { padding: var(--spacing-xl) 0; }
+  .view-all { font-size: clamp(1rem, 2vw, 1.25rem); }
+  .jobs-grid { grid-template-columns: repeat(2, 1fr); gap: var(--spacing-lg); }
+  .job-card-title { font-size: clamp(1.375rem, 2.5vw, 1.75rem); }
+  .job-card-meta { font-size: clamp(0.875rem, 1.8vw, 1rem); }
+  .job-card-body p { font-size: clamp(1rem, 2vw, 1.25rem); }
+  .salary { font-size: clamp(1.125rem, 2vw, 1.375rem); }
+  .job-card-footer .btn { 
+    font-size: clamp(1rem, 2vw, 1.25rem); 
+    padding: clamp(0.625rem, 1.5vw, 0.875rem) clamp(1.25rem, 2vw, 1.75rem); 
+  }
+  .testimonial-slider { max-width: 700px; padding: 0 var(--spacing-xl); }
+  .cta-section { padding: var(--spacing-xl) 0; }
+  .cta-content { padding: var(--spacing-lg); }
+  .cta-section h2 { font-size: clamp(2rem, 4vw, 2.5rem); }
+  .cta-section p { font-size: clamp(1rem, 2vw, 1.25rem); }
+  .cta-buttons { flex-direction: row; gap: var(--spacing-md); }
+  .cta-buttons .btn { 
+    padding: clamp(0.625rem, 1.5vw, 0.875rem) clamp(1.25rem, 2.5vw, 1.75rem); 
+    font-size: clamp(1rem, 2vw, 1.25rem); 
+    min-width: 180px; 
+  }
+  .navbar-collapse { 
+    background: rgba(255, 255, 255, 0.95); 
+    border-radius: var(--border-radius-lg); 
+    padding: var(--spacing-md); 
+    margin-top: var(--spacing-sm); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+  }
+  .navbar-nav { flex-direction: column; align-items: center; gap: var(--spacing-lg); }
+  .nav-link { padding: var(--spacing-sm); font-size: var(--font-size-md); }
+  .nav-cta { width: 100%; justify-content: center; }
+  .footer-content { grid-template-columns: repeat(2, 1fr); text-align: left; }
+  .footer-section h4 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
+  .footer-section h4::after { left: 0; transform: none; }
+  .footer-logo { font-size: clamp(2rem, 4vw, 2.5rem); }
+  .footer-tagline { font-size: clamp(0.875rem, 2vw, 1rem); }
+  .footer-links a { font-size: clamp(0.875rem, 2vw, 1rem); }
+  .footer-links-explore a.active::after { width: 50%; bottom: -2px; }
+  .footer-links-explore a:hover, .footer-links-explore a.active { transform: translateX(5px); }
+  .footer-links-get-started a:hover { transform: translateX(5px); }
+  .social-links { justify-content: flex-start; gap: var(--spacing-sm); }
+  .social-icon { width: 40px; height: 40px; font-size: 1rem; }
+  .footer-contact p { justify-content: flex-start; font-size: clamp(0.875rem, 2vw, 1rem); }
+  .footer-contact i { font-size: 1rem; }
+  .footer-bottom p { font-size: clamp(0.875rem, 2vw, 1rem); }
+  .footer-bottom a { font-size: clamp(0.875rem, 2vw, 1rem); }
+}
+
+/* Large screens (992px - 1199.98px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .section { padding: var(--spacing-xxl) 0; }
+  .hero-container { 
+    grid-template-columns: 1fr; 
+    padding: var(--spacing-xxl); 
+    gap: var(--spacing-lg); 
+    max-width: 900px; 
+    margin: 0 auto; 
+  }
+  .hero-content { 
+    text-align: center; 
+    padding: var(--spacing-lg); 
+  }
+  .hero-content h1 { font-size: clamp(3rem, 5vw, 3.5rem); }
+  .hero-content .subtitle { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+  .hero-visuals { 
+    margin-top: var(--spacing-lg); 
+  }
+  .search-bar { 
+    max-width: 700px; 
+    margin: 0 auto; 
+    padding: var(--spacing-md); 
+  }
+  .stats-cluster { 
+    flex-direction: row; 
+    gap: var(--spacing-lg); 
+    justify-content: center; 
+    max-width: 800px; 
+    margin: 0 auto; 
+  }
+  .stat-orb { 
+    width: clamp(100px, 18vw, 120px); 
+    height: clamp(100px, 18vw, 120px); 
+  }
+  .stat-value { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+  .stat-label { font-size: clamp(0.75rem, 1.2vw, 0.875rem); }
+  .about-content { grid-template-columns: 1fr 1fr; }
+  .about-text { padding: var(--spacing-lg); }
+  .visual-frame { max-width: 600px; }
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-container { grid-template-columns: repeat(2, 1fr); }
+  .explore-card { flex: 0 0 250px; }
+  .logos-grid { grid-template-columns: repeat(4, 1fr); gap: var(--spacing-xl); }
+  .featured-jobs { padding: var(--spacing-xxl) 0; }
+  .view-all { font-size: clamp(1rem, 1.5vw, 1.25rem); }
+  .jobs-grid { grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg); }
+  .testimonial-slider { max-width: 800px; }
+  .cta-section h2 { font-size: clamp(2.25rem, 3.5vw, 2.75rem); }
+  .cta-section p { font-size: clamp(1rem, 1.5vw, 1.25rem); }
+  .cta-buttons .btn { 
+    padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1.5rem, 2vw, 2rem); 
+    font-size: clamp(1rem, 1.5vw, 1.25rem); 
+  }
+  .navbar-nav { gap: var(--spacing-md); }
+  .nav-link { padding: var(--spacing-sm) var(--spacing-lg); }
+  .nav-cta { padding: var(--spacing-xs) var(--spacing-lg); }
+  .footer-content { grid-template-columns: repeat(3, 1fr); text-align: left; }
+  .footer-section h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+  .footer-logo { font-size: clamp(2rem, 3vw, 2.5rem); }
+  .footer-tagline { font-size: clamp(0.875rem, 1.5vw, 1rem); }
+  .footer-links a { font-size: clamp(0.875rem, 1.5vw, 1rem); }
+  .footer-links-explore a.active::after { width: 50%; bottom: -2px; }
+  .footer-links-explore a:hover, .footer-links-explore a.active { transform: translateX(5px); }
+  .footer-links-get-started a:hover { transform: translateX(5px); }
+  .social-links { justify-content: flex-start; gap: var(--spacing-sm); }
+  .social-icon { width: 40px; height: 40px; font-size: 1rem; }
+  .footer-contact p { justify-content: flex-start; font-size: clamp(0.875rem, 1.5vw, 1rem); }
+  .footer-contact i { font-size: 1rem; }
+  .footer-bottom p { font-size: clamp(0.875rem, 1.5vw, 1rem); }
+  .footer-bottom a { font-size: clamp(0.875rem, 1.5vw, 1rem); }
+}
+
+/* Extra large screens (1200px and up) */
+@media (min-width: 1200px) {
+  .hero-section { 
+    padding: var(--spacing-xl) 0; 
+    margin-top: var(--navbar-height, 70px); /* Ensure hero starts below fixed navbar */
+  }
+  .hero-container { 
+    grid-template-columns: 1fr; 
+    padding: var(--spacing-xl); 
+    gap: var(--spacing-xl); 
+    max-width: 1200px; 
+    margin: 0 auto; 
+  }
+  .hero-content { 
+    text-align: center; 
+    padding: var(--spacing-xl); 
+  }
+  .hero-content h1 { 
+    font-size: clamp(3.5rem, 5vw, 4.5rem); 
+  }
+  .hero-content .subtitle { 
+    font-size: clamp(1.5rem, 2vw, 1.75rem); 
+  }
+  .search-bar { 
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: var(--spacing-md); 
+  }
+  .hero-visuals { 
+    margin-top: var(--spacing-lg); 
+  }
+  .element-sphere { 
+    width: 250px; 
+    height: 250px; 
+    top: 15%; 
+    right: 10%; 
+  }
+  .element-pulse { 
+    width: 180px; 
+    height: 180px; 
+    bottom: 15%; 
+    left: 10%; 
+  }
+  .stats-cluster { 
+    flex-direction: row; 
+    gap: var(--spacing-xl); 
+    max-width: 1000px; 
+    justify-content: center; 
+    margin: 0 auto; 
+  }
+  .stat-orb { 
+    width: clamp(100px, 12vw, 120px); 
+    height: clamp(100px, 12vw, 120px); 
+  }
+  .stat-value { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+  .stat-label { font-size: clamp(0.75rem, 1vw, 0.875rem); }
+  .about-text { padding: var(--spacing-xl); }
+  .visual-frame { max-width: 600px; }
+  .benefits-grid { grid-template-columns: repeat(4, 1fr); }
+  .steps-container { grid-template-columns: repeat(3, 1fr); }
+  .step { padding: var(--spacing-xl); }
+  .step-icon { width: 80px; height: 80px; }
+  .step-icon i { font-size: 2.5rem; }
+  .step-content h3 { font-size: var(--font-size-lg); }
+  .explore-card { 
+    flex: 0 0 calc(200px * 1.6); 
+    height: calc(300px * 1.6); 
+  }
+  .explore-card-content h3 { 
+    font-size: calc(var(--font-size-lg) * 1.3); 
+    margin-bottom: calc(var(--spacing-md) * 1.6); 
+  }
+  .explore-card-content .btn { 
+    font-size: calc(var(--font-size-sm) * 1.3); 
+    padding: calc(8px * 1.6) calc(16px * 1.6); 
+  }
+  .carousel-controls { margin-top: calc(var(--spacing-md) * 2); }
+  .carousel-arrow { width: 48px; height: 48px; font-size: 1.3rem; }
+  .cta-section h2 { font-size: clamp(2.5rem, 3vw, 3rem); }
+  .cta-section p { font-size: clamp(1.125rem, 1.5vw, 1.375rem); }
+  .logos-grid { grid-template-columns: repeat(4, 1fr); gap: var(--spacing-xl); }
+  .featured-jobs { padding: var(--spacing-xxl) 0; }
+  .view-all { font-size: clamp(1rem, 1.5vw, 1.375rem); }
+  .jobs-grid { grid-template-columns: repeat(3, 1fr); gap: var(--spacing-xl); }
+  .navbar-nav { gap: var(--spacing-md); }
+  .nav-link { padding: var(--spacing-sm) var(--spacing-lg); }
+  .nav-cta { padding: var(--spacing-xs) var(--spacing-lg); }
+  .footer-content { grid-template-columns: repeat(4, 1fr); text-align: left; }
+  .footer-section { padding: var(--spacing-md); }
+  .footer-section h4 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+  .footer-logo { font-size: clamp(2rem, 2.5vw, 2.5rem); }
+  .footer-tagline { font-size: clamp(0.875rem, 1.5vw, 1rem); }
+  .footer-links a { font-size: clamp(0.875rem, 1.5vw, 1rem); }
+  .footer-links-explore a.active::after { width: 50%; bottom: -2px; }
+  .footer-links-explore a:hover, .footer-links-explore a.active { transform: translateX(5px); }
+  .footer-links-get-started a:hover { transform: translateX(5px); }
+  .social-links { justify-content: flex-start; gap: var(--spacing-sm); }
+  .social-icon { width: 40px; height: 40px; font-size: 1rem; }
+  .footer-contact p { justify-content: flex-start; font-size: clamp(0.875rem, 1.5vw, 1rem); }
+  .footer-contact i { font-size: 1rem; }
+  .footer-bottom p { font-size: clamp(0.875rem, 1.5vw, 1rem); }
+  .footer-bottom a { font-size: clamp(0.875rem, 1.5vw, 1rem); }
+}
+
+/* iPad Pro 12.9" portrait */
+@media (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) {
+  .section { padding: var(--spacing-xxl) 0; }
+  .hero-section { 
+    min-height: 70vh; 
+    padding: var(--spacing-xl) 0; 
+  }
+  .hero-container { 
+    grid-template-columns: 1fr; 
+    padding: var(--spacing-xxl); 
+    gap: var(--spacing-lg); 
+    max-width: 900px; 
+    margin: 0 auto; 
+  }
+  .hero-content { 
+    text-align: center; 
+    padding: var(--spacing-lg); 
+  }
+  .hero-content h1 { font-size: clamp(3rem, 5vw, 3.5rem); }
+  .hero-content .subtitle { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+  .search-bar { 
+    max-width: 700px; 
+    margin: 0 auto; 
+    padding: var(--spacing-md); 
+  }
+  .hero-visuals { margin-top: var(--spacing-lg); }
+  .stats-cluster { 
+    flex-direction: row; 
+    gap: var(--spacing-lg); 
+    max-width: 800px; 
+    justify-content: center; 
+    margin: 0 auto; 
+  }
+  .stat-orb { 
+    width: clamp(100px, 15vw, 120px); 
+    height: clamp(100px, 15vw, 120px); 
+  }
+  .stat-value { font-size: clamp(1.125rem, 2vw, 1.375rem); }
+  .stat-label { font-size: clamp(0.75rem, 1.2vw, 0.875rem); }
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-container { grid-template-columns: repeat(2, 1fr); }
+  .explore-card { flex: 0 0 calc(33.33% - var(--spacing-md) * 2 / 3); }
+  .logos-grid { grid-template-columns: repeat(4, 1fr); gap: var(--spacing-xl); }
+  .featured-jobs { padding: var(--spacing-xxl) 0; }
+  .jobs-grid { grid-template-columns: repeat(2, 1fr); gap: var(--spacing-lg); }
+  .footer-content { grid-template-columns: repeat(3, 1fr); text-align: left; }
+  .footer-section h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+  .footer-logo { font-size: clamp(2rem, 3vw, 2.5rem); }
+  .footer-tagline { font-size: clamp(0.875rem, 1.5vw, 1rem); }
+  .footer-links a { font-size: clamp(0.875rem, 1.5vw, 1rem); }
+  .footer-links-explore a.active::after { width: 50%; bottom: -2px; }
+  .footer-links-explore a:hover, .footer-links-explore a.active { transform: translateX(5px); }
+  .footer-links-get-started a:hover { transform: translateX(5px); }
+  .social-links { justify-content: flex-start; gap: var(--spacing-sm); }
+  .social-icon { width: 40px; height: 40px; font-size: 1rem; }
+  .footer-contact p { justify-content: flex-start; font-size: clamp(0.875rem, 1.5vw, 1rem); }
+  .footer-contact i { font-size: 1rem; }
+  .footer-bottom p { font-size: clamp(0.875rem, 1.5vw, 1rem); }
+  .footer-bottom a { font-size: clamp(0.875rem, 1.5vw, 1rem); }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1600px) {
+  .container, .hero-container, .about-content, .steps-container, .jobs-grid {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-container { 
+    max-width: 1400px; 
+    gap: var(--spacing-xl); 
+  }
+  .hero-content h1 { font-size: clamp(4rem, 5vw, 5rem); }
+  .hero-content .subtitle { font-size: clamp(1.75rem, 2vw, 2rem); }
+  .search-bar { max-width: 900px; }
+  .stats-cluster { max-width: 1200px; }
+}
+
+/* Landscape orientation adjustments */
+@media (max-width: 991.98px) and (orientation: landscape) {
+  .section { padding: var(--spacing-xl) 0; }
+  .hero-section { min-height: auto; padding: var(--spacing-xl) 0; }
+  .hero-container { 
+    grid-template-columns: 1fr; 
+    min-height: auto; 
+    padding: var(--spacing-xl); 
+    gap: var(--spacing-md); 
+    max-width: 800px; 
+    margin: 0 auto; 
+  }
+  .hero-content h1 { font-size: clamp(2rem, 6vw, 2.5rem); }
+  .hero-content .subtitle { font-size: clamp(1rem, 3vw, 1.25rem); }
+  .search-bar { max-width: 600px; margin: 0 auto; }
+  .stats-cluster { 
+    flex-direction: row; 
+    gap: var(--spacing-md); 
+    justify-content: center; 
+    max-width: 700px; 
+    margin: 0 auto; 
+  }
+  .stat-orb { 
+    width: clamp(90px, 15vw, 100px); 
+    height: clamp(90px, 15vw, 100px); 
+  }
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-container { grid-template-columns: repeat(2, 1fr); }
+  .explore-card { flex: 0 0 calc(33.33% - var(--spacing-md) * 2 / 3); }
+  .footer-content { grid-template-columns: repeat(2, 1fr); text-align: left; }
+  .footer-section h4 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
+  .footer-logo { font-size: clamp(1.75rem, 3vw, 2.25rem); }
+  .footer-tagline { font-size: clamp(0.875rem, 2vw, 1rem); }
+  .footer-links a { font-size: clamp(0.875rem, 2vw, 1rem); }
+  .footer-links-explore a.active::after { width: 50%; bottom: -2px; }
+  .footer-links-explore a:hover, .footer-links-explore a.active { transform: translateX(5px); }
+  .footer-links-get-started a:hover { transform: translateX(5px); }
+  .social-links { justify-content: flex-start; gap: var(--spacing-sm); }
+  .social-icon { width: 36px; height: 36px; font-size: 1rem; }
+  .footer-contact p { justify-content: flex-start; font-size: clamp(0.875rem, 2vw, 1rem); }
+  .footer-bottom p { font-size: clamp(0.875rem, 2vw, 1rem); }
+  .footer-bottom a { font-size: clamp(0.875rem, 2vw, 1.25rem); }
+}
+

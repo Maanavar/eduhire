@@ -1,0 +1,541 @@
+/* Navbar - 2025 Futuristic Design */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--navbar-height, 90px);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(107, 72, 255, 0.2);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Brand */
+.navbar-brand {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+}
+
+.brand-e {
+  font-size: clamp(2.2rem, 3.8vw, 2.8rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.brand-du {
+  font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.navbar-brand:hover .brand-e {
+  text-shadow: 0 0 20px rgba(107, 72, 255, 0.5);
+}
+
+.brand-hologram {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(107, 72, 255, 0.2), transparent 70%);
+  opacity: 0;
+  animation: hologramShift 6s infinite ease-in-out;
+  z-index: -1;
+}
+
+.navbar-brand:hover .brand-hologram {
+  opacity: 0.4;
+}
+
+/* Toggler */
+.navbar-toggler {
+  border: none;
+  padding: var(--spacing-sm);
+  z-index: 1100;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon {
+  width: 34px;
+  height: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: transparent;
+}
+
+.toggler-line {
+  width: 100%;
+  height: 3.5px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 3px;
+  transition: all 0.4s ease;
+}
+
+.navbar-toggler[aria-expanded="true"] .line-1 {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.navbar-toggler[aria-expanded="true"] .line-2 {
+  opacity: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .line-3 {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Navbar Nav */
+.navbar-nav {
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) 0; /* Increased padding for vertical centering */
+  align-items: center;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  font-size: clamp(0.95rem, 2.1vw, 1rem); /* Slightly larger */
+  font-weight: 500;
+  color: var(--text-light);
+  padding: var(--spacing-sm) var(--spacing-md); /* Adjusted padding */
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 70%;
+}
+
+.nav-link:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* CTA Button */
+/* Navbar Action Buttons */
+.nav-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xs) var(--spacing-md); 
+  font-size: clamp(0.9rem, 1.9vw, 1rem); 
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Hover and Focus Effects */
+.nav-action:hover {
+  transform: translateY(-1px);
+}
+
+.nav-action:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Primary Action (Find Jobs) */
+.nav-action-primary {
+  border-radius: 40px;
+  padding: 0.75rem 1rem;
+  background: var(--primary);
+  border: none;
+  color: var(--white);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: clamp(0.575rem, 2vw, 0.9rem);
+}
+
+
+/* Secondary Action (Post Job) */
+.nav-action-secondary {
+  background: transparent;
+  position: relative;
+}
+
+
+
+/* Underline Effect for Secondary Action */
+.nav-action-secondary::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-action-secondary:hover::after {
+  width: 80%; /* Underline effect instead of border */
+}
+
+/* Hologram Effect for Both Actions */
+.nav-action::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(107, 72, 255, 0.15), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.nav-action:hover::before {
+  opacity: 0.3; /* Slightly reduced opacity for subtlety */
+}
+
+/* Particle Effect for Primary Action */
+.nav-action-primary .particle {
+  position: absolute;
+  width: 4px; /* Smaller particles */
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  pointer-events: none;
+  z-index: 1;
+  animation: particleFade 0.8s ease-out forwards;
+}
+
+@keyframes particleFade {
+  0% { transform: translate(0, 0); opacity: 0.8; }
+  100% { transform: translate(15px, -15px); opacity: 0; }
+}
+
+/* Adjust Navbar Nav Spacing */
+.navbar-nav {
+  gap: var(--spacing-sm); /* Reduced gap for tighter layout */
+  align-items: center; /* Ensure vertical alignment */
+}
+
+/* Responsive Styles */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-action {
+    display: block;
+    margin: var(--spacing-xs) 0; /* Tighter spacing */
+    text-align: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .nav-action-primary,
+  .nav-action-secondary {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .nav-action-secondary::after {
+    bottom: 2px; /* Adjust underline position for mobile */
+  }
+}
+
+
+
+
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes hologramShift {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+/* ... (existing navbar, footer, and utility styles) */
+
+/* Footer */
+.footer {
+  background: linear-gradient(180deg, rgba(10, 25, 47, 0.95), rgba(30, 60, 114, 0.85));
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  border-top: 2px solid;
+  border-image: linear-gradient(135deg, var(--primary), var(--accent)) 1;
+}
+
+.footer-content {
+  display: grid;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xl) 0;
+}
+
+.footer-section h4 {
+  position: relative;
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-lg);
+}
+
+.footer-section h4::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  transition: width 0.3s ease;
+}
+
+.footer-section:hover h4::after {
+  width: 30px;
+}
+
+.footer-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.footer-tagline {
+  font-size: var(--font-size-sm);
+  opacity: 0.8;
+  margin: var(--spacing-sm) 0;
+}
+
+.social-links {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: var(--primary);
+  transform: translateY(-2px);
+}
+
+.footer-links li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-links a {
+  color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+.footer-links-explore a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.footer-links-explore a:hover,
+.footer-links-explore a.active {
+  color: var(--primary);
+  transform: translateX(5px);
+}
+
+.footer-links-explore a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+.footer-links-get-started a.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.footer-links a:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-contact i {
+  color: var(--primary);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: var(--spacing-md) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom a {
+  color: var(--white);
+}
+
+.footer-bottom a:hover {
+  color: var(--primary);
+}
+
+.footer-bottom a:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.footer-hologram {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.1), rgba(255, 0, 255, 0.1));
+  animation: hologram 3s infinite;
+}
+
+.footer-overlay {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: radial-gradient(circle at center, rgba(0, 229, 255, 0.1), transparent);
+  z-index: 0;
+}
+
+.footer-links-get-started a,
+.footer-contact a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.footer-links-get-started a:hover,
+.footer-contact a:hover,
+.footer-links-explore a:hover,
+.footer-links-explore a.active {
+  color: var(--primary);
+  transform: translateX(5px); /* Consistent with Explore section */
+}
+
+.footer-links-get-started a.active,
+.footer-contact a.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.footer-links-get-started a.active::after,
+.footer-contact a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+/* Disable clicks on non-linking items */
+.footer-contact p:not(:has(a)) {
+  pointer-events: none;
+  cursor: default;
+}
+
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes hologramShift {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes hologram {
+  0% { transform: translateY(0); opacity: 0.3; }
+  50% { transform: translateY(-10px); opacity: 0.5; }
+  100% { transform: translateY(0); opacity: 0.3; }
+}
+
+
+/* Utility Classes */
+.scale-up { transition: var(--transition); }
+.scale-up:hover { transform: scale(1.03); }
+.hover-shadow { transition: var(--transition); }
+.hover-shadow:hover { box-shadow: var(--shadow-md); }
+.text-primary { color: var(--primary); }
+.text-accent { color: var(--accent); }
+.bg-primary { background: var(--primary); }
+.bg-neutral { background: var(--neutral); }
+.nav-link i, .header .btn i { transition: var(--transition); }
+
+
+/* Particle Effect for CTA Button */
+.nav-cta {
+  position: relative;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
